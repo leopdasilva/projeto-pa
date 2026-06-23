@@ -1,7 +1,7 @@
-function Login() {
+function Login({login}) {
     return(
         <>
-        <h2>- - - Login - - -</h2>
+            <h2>{login}</h2>
         </>
     )
 }

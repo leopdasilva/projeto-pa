@@ -4,8 +4,8 @@ import Login from "./componentes/Login";
 function App() {
   return(
     <>
-      <Header/>
-      <Login/>
+      <Header titulo="Lanchonete Xpress" subtitulo="A entrega mais rápida da região"/>
+      <Login login="- - - Login - - -"/>
     </>
   )
 }
