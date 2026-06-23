@@ -1,16 +1,14 @@
-import Login from './Login';
-import './Login.css'; 
+import './Login.css'
 
-function App() {
-  return (
-    <div className="container-principal">
-      <header style={{ backgroundColor: 'black', color: 'white', width: '100%', textAlign: 'center', padding: '20px 0' }}>
-        <h1>Lanchonete Xpress</h1>
-        <p>A entrega mais rápida da região</p>
-      </header>
-      <Login login="Login" />
-    </div>
-  );
+function Login({login}) { 
+    return(
+        <div className='login'> 
+            <h2>{login}</h2>
+            <input type="text" name="usuario" id="id_usuario" placeholder='Usuário'/>
+            <input type="password" name="senha" id="id_senha" placeholder='Senha'/>
+            <button id='bt_enviar'>Entrar</button>
+        </div>
+    )
 }
 
-export default App;
+export default Login

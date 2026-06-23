@@ -1,3 +1,20 @@
+/* Zera as margens padrão do navegador */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #ffffff;
+}
+
+/* Alinha o cabeçalho e o card de login em coluna e centraliza horizontalmente */
+.container-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* Centraliza tudo na horizontal */
+    width: 100vw;            /* Ocupa a largura total da tela */
+    box-sizing: border-box;
+}
+
 /* Estilo do Card de Login */
 .login {
     display: flex;
@@ -8,12 +25,10 @@
     border-radius: 8px;
     background-color: #ffffff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    
-    /* TRUQUE DA CENTRALIZAÇÃO INFALÍVEL: */
-    margin: 50px auto 0 auto; /* Centraliza horizontalmente e dá 50px de espaço do topo */
+    margin: 50px auto;       /* Distância do cabeçalho preto */
 }
 
-/* Título */
+/* Título interno do Card */
 .login h2 {
     color: #000000;
     text-align: center;
@@ -22,7 +37,7 @@
     font-size: 24px;
 }
 
-/* Campos de texto e Botão */
+/* Inputs e Botão */
 .login input, 
 .login button {
     width: 100%;
