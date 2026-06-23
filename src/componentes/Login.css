@@ -1,0 +1,52 @@
+/* Estilo do Card de Login */
+.login {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    padding: 24px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    
+    /* TRUQUE DA CENTRALIZAÇÃO INFALÍVEL: */
+    margin: 50px auto 0 auto; /* Centraliza horizontalmente e dá 50px de espaço do topo */
+}
+
+/* Título */
+.login h2 {
+    color: #000000;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 24px;
+}
+
+/* Campos de texto e Botão */
+.login input, 
+.login button {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.login input {
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+.login button {
+    margin-bottom: 0; 
+    border: 1px solid #cccccc;
+    background-color: #f2f2f2;
+    color: #000000;
+    cursor: pointer;
+}
+
+.login button:hover {
+    background-color: #e5e5e5;
+}
