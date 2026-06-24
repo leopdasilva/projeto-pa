@@ -2,6 +2,7 @@ import Header from "./componentes/Header";
 import Login from "./componentes/Login";
 import CardProduto from "./componentes/Card-prod";
 import Funcionario from "./componentes/Funcionario";
+import Contador from "./componentes/contador";
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
             <Funcionario nome="Donathan Goncalves" cargo="Chef de Cozinha" fotoUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDxliqPfoR4K-WKT7JoGovyVi794g6FrtKXQ&s"/>
           </div>
       </div>
+
+      <Contador/>
       
     </>
   )

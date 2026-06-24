@@ -1,0 +1,76 @@
+/* Centraliza e estrutura o card do contador */
+.contador-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto;
+    padding: 24px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    width: 320px; /* Aumentamos um pouquinho a largura para caber os 3 botões confortavelmente */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+/* O número do contador */
+.contador-container h1 {
+    font-family: Arial, sans-serif;
+    color: #1e293b;
+    font-size: 3.5rem;
+    margin: 0 0 20px 0;
+    font-weight: 700;
+}
+
+/* CONTAINER DOS BOTÕES: Alinha os três botões lado a lado */
+.contador-botoes {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; /* Espaço entre os botões */
+    justify-content: center;
+    width: 100%;
+}
+
+/* ESTILO BASE PARA TODOS OS BOTÕES */
+.contador-botoes button {
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    flex: 1; /* Faz todos os botões terem exatamente o mesmo tamanho */
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Efeito de clique para todos os botões */
+.contador-botoes button:active {
+    transform: scale(0.95);
+}
+
+/* BOTÃO ADICIONAR (Seu Azul Padrão) */
+.btn-adicionar {
+    background-color: #1958a0;
+}
+.btn-adicionar:hover {
+    background-color: #15457e;
+}
+
+/* BOTÃO SUBTRAIR (Tom de vermelho/coral moderno) */
+.btn-subtrair {
+    background-color: #e11d48;
+}
+.btn-subtrair:hover {
+    background-color: #be123c;
+}
+
+/* BOTÃO LIMPAR (Cinza escuro neutro) */
+.btn-limpar {
+    background-color: #64748b;
+}
+.btn-limpar:hover {
+    background-color: #475569;
+}
