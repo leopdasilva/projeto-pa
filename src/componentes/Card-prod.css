@@ -21,7 +21,6 @@
     box-sizing: border-box;
 }
 
-
 .produto-card:hover {
     transform: translateY(-5px);
     border-color: #cbd5e1;
@@ -45,6 +44,23 @@
     transition: color 0.3s ease;
 }
 
+.descricao {
+    font-size: 0.9rem !important;   
+    color: #64748b !important;      
+    font-weight: normal !important; 
+    line-height: 1.4;              
+    margin: 10px 0 0 0 !important;  
+    font-family: Arial, sans-serif;
+}
+
 .produto-card:hover p {
     color: #76a2d1;
+}
+
+.produto-imagem {
+    width: 100%;               
+    height: 140px;             
+    object-fit: cover;        
+    border-radius: 8px;        
+    margin-bottom: 12px;       
 }

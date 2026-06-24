@@ -1,18 +1,36 @@
 /* CONTAINER DOS FUNCIONÁRIOS*/
+/* CONTAINER PRINCIPAL: Empilha o título no topo e os cards abaixo */
 .funcionarios-container {
     display: flex;
-    flex-direction: row;       
-    flex-wrap: wrap;          
-    justify-content: center;   
-    gap: 30px;                
+    flex-direction: column;    
+    align-items: center;       
     width: 100%;
-    
-    background-color: #2b2b41; 
-    
+    background-color: #1e293b; 
     padding: 40px 20px;
-    margin-top: 5px;
+    margin-top: 40px;
     box-sizing: border-box;
-    border-radius: 16px;      
+    border-radius: 16px;
+}
+
+.titulo-secao-interna {
+    color: #ffffff;            
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: Arial, sans-serif;
+    margin-top: 0;             
+    margin-bottom: 30px;      
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+/* BLOCO INTERNO DOS CARDS: Força apenas os cards a ficarem lado a lado */
+.funcionarios-cards-wrapper {
+    display: flex;
+    flex-direction: row;       
+    flex-wrap: wrap;           
+    justify-content: center;   
+    gap: 30px;
+    width: 100%;
 }
 
 /* CARD INDIVIDUAL DO FUNCIONÁRIO */
