@@ -1,11 +1,13 @@
 import './Header.css'
+import logoLanchonete from '../assets/xpress-logo2.png'
+import subtitulo from '../assets/subtitulo.png'
 
-function Header({titulo, subtitulo}) {
+function Header() {
     return(
         <>
             <div className="titulo">  
-                <h1>{titulo}</h1>
-                <h2>{subtitulo}</h2>    
+                <img src={logoLanchonete} alt="Logo Lanchonete Xpress" className="header-logo"/>
+                <img src={subtitulo} alt="Subtitulo Lanchonete Xpress" className="header-sub"/>  
             </div> 
         </>
         

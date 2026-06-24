@@ -7,6 +7,7 @@ function Login({login}) {
             <input type="text" name="usuario" id="id_usuario" placeholder='Usuário'/>
             <input type="password" name="senha" id="id_senha" placeholder='Senha'/>
             <button id='bt_enviar'>Entrar</button>
+            <a href="#">Esqueceu a senha?</a>
         </div>
     )
 }
