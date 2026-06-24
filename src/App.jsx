@@ -14,7 +14,6 @@ function App() {
         <CardProduto nome="X-Salada" preco="17,90" descricao="Blend bovino suculento, queijo derretido, alface americana fresca, tomates selecionados e molho artesanal." imagem="https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&auto=format&fit=crop&q=80"/>
         <CardProduto nome="Refrigerante" preco="6,00" descricao="Lata de 350ml trincando de gelada. Escolha o seu sabor favorito para acompanhar o seu lanche." imagem="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&auto=format&fit=crop&q=80"/>
       </div>
-
       
       <div className="funcionarios-container">
           <h2 className="titulo-secao-interna">Funcionários</h2>
