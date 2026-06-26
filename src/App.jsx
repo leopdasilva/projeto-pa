@@ -11,13 +11,16 @@ function App() {
       <Login login="Login"/>
 
       <div className="produtos-container">
-        <CardProduto nome="X-Burguer" preco="15,90" descricao="Hambúrguer artesanal grelhado, muito queijo prato derretido e maionese especial da casa no pão brioche selado." imagem="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&auto=format&fit=crop&q=80"/>
-        <CardProduto nome="X-Salada" preco="17,90" descricao="Blend bovino suculento, queijo derretido, alface americana fresca, tomates selecionados e molho artesanal." imagem="https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&auto=format&fit=crop&q=80"/>
-        <CardProduto nome="Refrigerante" preco="6,00" descricao="Lata de 350ml trincando de gelada. Escolha o seu sabor favorito para acompanhar o seu lanche." imagem="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&auto=format&fit=crop&q=80"/>
+        <h2 className="titulo-cardapio">Cardápio</h2>
+        <div className="produtos-cards-wrapper">
+          <CardProduto nome="X-Burguer" preco="15,90" descricao="Hambúrguer artesanal grelhado, muito queijo prato derretido e maionese especial da casa no pão brioche selado." imagem="https://images.pexels.com/photos/33673825/pexels-photo-33673825.jpeg"/>
+          <CardProduto nome="X-Salada" preco="17,90" descricao="Blend bovino suculento, queijo derretido, alface americana fresca, tomates selecionados e molho artesanal." imagem="https://images.pexels.com/photos/3738730/pexels-photo-3738730.jpeg"/>
+          <CardProduto nome="Refrigerante" preco="6,00" descricao="Lata de 350ml trincando de gelada. Escolha o seu sabor favorito para acompanhar o seu lanche." imagem="https://images.pexels.com/photos/5860659/pexels-photo-5860659.jpeg"/>
+        </div>
       </div>
-      
+
       <div className="funcionarios-container">
-          <h2 className="titulo-secao-interna">Funcionários</h2>
+          <h2 className="titulo-funcionarios">Funcionários</h2>
           <div className="funcionarios-cards-wrapper">
             <Funcionario nome="Alexandre Gaspari" cargo="Atendente" fotoUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPSvxlMQ0yxOc2hXkochHyY51xkZsBxKFDHw&s"/>
             <Funcionario nome="Cesar Stati" cargo="Gerente" fotoUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwU2daGPdMx-ZYsHz8DuHeFBi_cqZtpUGF9Q&s"/>
@@ -25,7 +28,14 @@ function App() {
           </div>
       </div>
 
-      <Contador/>
+      <div className="contador-container">
+        <h2 className ="titulo-contador">Caixa</h2>
+        <div className="contador-cards-wrapper">
+          <Contador nome="X-Burguer" preco={15.90}/>
+          <Contador nome="X-Salada" preco={17.90}/>
+          <Contador nome="Refrigerante" preco={6.00}/>
+        </div>
+      </div>
       
     </>
   )

@@ -1,16 +1,33 @@
+.titulo-cardapio {
+    color: #1e293b ;            
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 0;             
+    margin-bottom: 30px;      
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+/* O container principal agora apenas agrupa verticalmente o título e o wrapper */
 .produtos-container {
+    width: 100%;
+    margin: 30px 0;
+}
+
+/* Esta nova classe herda as regras do Flexbox para alinhar os cards lado a lado */
+.produtos-cards-wrapper {
     display: flex;
     flex-direction: row;       
     justify-content: center;   
     gap: 20px;                 
     flex-wrap: wrap;           
-    margin: 30px 0;            
     width: 100%;
 }
 
+/* Mantém as propriedades existentes dos seus cards */
 .produto-card {
     text-align: center;
-    background-color: #ffffff;
+    background-color: hsl(0, 0%, 100%);
     border: 1px solid #e2e8f0;
     border-radius: 12px;
     padding: 20px 40px;
@@ -32,7 +49,6 @@
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 8px;
-    font-family: Arial, sans-serif;
 }
 
 .produto-card p {
@@ -40,7 +56,6 @@
     font-size: 1.4rem;
     font-weight: bold;
     margin-top: 0;
-    font-family: Arial, sans-serif;
     transition: color 0.3s ease;
 }
 
@@ -50,7 +65,6 @@
     font-weight: normal !important; 
     line-height: 1.4;              
     margin: 10px 0 0 0 !important;  
-    font-family: Arial, sans-serif;
 }
 
 .produto-card:hover p {

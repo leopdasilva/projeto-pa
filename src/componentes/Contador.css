@@ -1,76 +1,135 @@
-/* Centraliza e estrutura o card do contador */
-.contador-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 40px auto;
-    padding: 24px;
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    width: 320px; /* Aumentamos um pouquinho a largura para caber os 3 botões confortavelmente */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    text-align: center;
-}
-
-/* O número do contador */
-.contador-container h1 {
-    font-family: Arial, sans-serif;
-    color: #1e293b;
-    font-size: 3.5rem;
-    margin: 0 0 20px 0;
+/* Corrigido para bater com a tag do HTML */
+.titulo-contador {
+    color: #1e293b !important; 
+    font-size: 1.8rem;
     font-weight: 700;
-}
-
-/* CONTAINER DOS BOTÕES: Alinha os três botões lado a lado */
-.contador-botoes {
-    display: flex;
-    flex-direction: row;
-    gap: 10px; /* Espaço entre os botões */
-    justify-content: center;
+    margin-top: 0;             
+    margin-bottom: 30px;      
+    letter-spacing: 0.5px;
+    text-align: center;
     width: 100%;
 }
 
-/* ESTILO BASE PARA TODOS OS BOTÕES */
+/* O container do bloco do Caixa */
+.contador-container {
+    width: 100%;
+    margin: 30px 0;
+}
+
+/* Alinha os cards do contador lado a lado de forma flexível */
+.contador-cards-wrapper {
+    display: flex;
+    flex-direction: row;       
+    justify-content: center;   
+    gap: 24px; /* Aumentado o espaço entre os cards */
+    flex-wrap: wrap;           
+    width: 100%;
+}
+
+/* Garante que a estrutura interna de cada card do Contador ocupe o espaço correto */
+.card-pedido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px; 
+    padding: 24px 20px 32px 20px; /* Aumentado o padding inferior (32px) para os botões NUNCA vazarem */
+    width: 260px; /* Aumentado levemente para acomodar melhor os botões */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    overflow: hidden; /* Evita qualquer tipo de vazamento visual */
+}
+
+.card-pedido:hover {
+    transform: translateY(-5px);
+    border-color: #cbd5e1;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+}
+
+/* Estilização interna dos textos do card */
+.card-pedido h1 {
+    color: #0f172a;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.card-pedido p {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin: 4px 0;
+}
+
+/* Estilo para destacar o preço total */
+.card-pedido p:last-of-type {
+    color: #0f172a; /* Cor mais escura e chique */
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-top: 12px;
+    margin-bottom: 24px; /* Espaço seguro antes dos botões */
+    background-color: #f1f5f9; /* Fundo sutil para destacar o total */
+    padding: 6px 16px;
+    border-radius: 20px;
+}
+
+/* Container que segura os botões */
+.contador-botoes {
+    display: flex;
+    flex-direction: row;
+    gap: 8px; 
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Nova base moderna e minimalista para os botões */
+.card-pedido button,
 .contador-botoes button {
     color: #ffffff;
     border: none;
     border-radius: 8px;
-    padding: 10px 16px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
+    padding: 10px 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
     cursor: pointer;
-    flex: 1; /* Faz todos os botões terem exatamente o mesmo tamanho */
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    flex: 1; 
+    transition: all 0.2s ease;
 }
 
-/* Efeito de clique para todos os botões */
+/* Efeito sutil de clique */
+.card-pedido button:active,
 .contador-botoes button:active {
-    transform: scale(0.95);
+    transform: scale(0.96);
 }
 
-/* BOTÃO ADICIONAR (Seu Azul Padrão) */
+/* =================================================== */
+/*   PALETA DE CORES ATUALIZADA (MODERNA E ELEGANTE)   */
+/* =================================================== */
+
+/* Adicionar: Verde Menta / Sálvia sofisticado */
 .btn-adicionar {
-    background-color: #1958a0;
+    background-color: #1e33a7 !important; 
 }
 .btn-adicionar:hover {
-    background-color: #15457e;
+    background-color: #4c62da !important;
 }
 
-/* BOTÃO SUBTRAIR (Tom de vermelho/coral moderno) */
-.btn-subtrair {
-    background-color: #e11d48;
-}
-.btn-subtrair:hover {
-    background-color: #be123c;
-}
-
-/* BOTÃO LIMPAR (Cinza escuro neutro) */
+/* Limpar: Cinza Ardósia neutro e limpo */
 .btn-limpar {
-    background-color: #64748b;
+    background-color: #94a3b8 !important; 
+    color: #1e293b !important; /* Texto escuro para melhor contraste */
 }
 .btn-limpar:hover {
-    background-color: #475569;
+    background-color: #cbd5e1 !important;
+}
+
+/* Subtrair: Terracota / Coral Queimado suave */
+.btn-subtrair, button[className*="subtrair"] {
+    background-color: #8d8220 !important; 
+}
+.btn-subtrair:hover, button[className*="subtrair"]:hover {
+    background-color: #665e18 !important;
 }

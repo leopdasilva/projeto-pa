@@ -1,3 +1,10 @@
+@import url('https://googleapis.com');
+
+/* Aplica para o corpo da página e garante que botões e inputs também herdem */
+body, button, input, textarea, select {
+  font-family: 'Raleway', sans-serif !important;
+}
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
