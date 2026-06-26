@@ -1,4 +1,4 @@
-/* Corrigido para bater com a tag do HTML */
+/* Estilo do Título da Seção do Caixa */
 .titulo-contador {
     color: #1e293b !important; 
     font-size: 1.8rem;
@@ -10,7 +10,7 @@
     width: 100%;
 }
 
-/* O container do bloco do Caixa */
+/* O container principal do bloco do Caixa */
 .contador-container {
     width: 100%;
     margin: 30px 0;
@@ -21,12 +21,12 @@
     display: flex;
     flex-direction: row;       
     justify-content: center;   
-    gap: 24px; /* Aumentado o espaço entre os cards */
+    gap: 24px; 
     flex-wrap: wrap;           
     width: 100%;
 }
 
-/* Garante que a estrutura interna de cada card do Contador ocupe o espaço correto */
+/* Estrutura interna de cada card do Contador */
 .card-pedido {
     display: flex;
     flex-direction: column;
@@ -35,12 +35,12 @@
     background-color: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 16px; 
-    padding: 24px 20px 32px 20px; /* Aumentado o padding inferior (32px) para os botões NUNCA vazarem */
-    width: 260px; /* Aumentado levemente para acomodar melhor os botões */
+    padding: 24px 20px 32px 20px; 
+    width: 300px; 
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
     transition: all 0.3s ease;
     box-sizing: border-box;
-    overflow: hidden; /* Evita qualquer tipo de vazamento visual */
+    overflow: hidden; 
 }
 
 .card-pedido:hover {
@@ -63,14 +63,14 @@
     margin: 4px 0;
 }
 
-/* Estilo para destacar o preço total */
+/* Estilo para destacar o preço total de cada lanche */
 .card-pedido p:last-of-type {
-    color: #0f172a; /* Cor mais escura e chique */
+    color: #0f172a; 
     font-size: 1.15rem;
     font-weight: 700;
     margin-top: 12px;
-    margin-bottom: 24px; /* Espaço seguro antes dos botões */
-    background-color: #f1f5f9; /* Fundo sutil para destacar o total */
+    margin-bottom: 24px; 
+    background-color: #f1f5f9; 
     padding: 6px 16px;
     border-radius: 20px;
 }
@@ -85,8 +85,7 @@
     box-sizing: border-box;
 }
 
-/* Nova base moderna e minimalista para os botões */
-.card-pedido button,
+/* Base minimalista para os botões do card */
 .contador-botoes button {
     color: #ffffff;
     border: none;
@@ -99,17 +98,16 @@
     transition: all 0.2s ease;
 }
 
-/* Efeito sutil de clique */
-.card-pedido button:active,
+/* Efeito sutil de clique nos botões */
 .contador-botoes button:active {
     transform: scale(0.96);
 }
 
 /* =================================================== */
-/*   PALETA DE CORES ATUALIZADA (MODERNA E ELEGANTE)   */
+/*             SUTIS CUSTOMIZADAS DE CORES             */
 /* =================================================== */
 
-/* Adicionar: Verde Menta / Sálvia sofisticado */
+/* Adicionar (Seu tom azul escuro) */
 .btn-adicionar {
     background-color: #1e33a7 !important; 
 }
@@ -117,19 +115,44 @@
     background-color: #4c62da !important;
 }
 
-/* Limpar: Cinza Ardósia neutro e limpo */
+/* Limpar (Seu tom cinza neutro) */
 .btn-limpar {
     background-color: #94a3b8 !important; 
-    color: #1e293b !important; /* Texto escuro para melhor contraste */
+    color: #1e293b !important; 
 }
 .btn-limpar:hover {
     background-color: #cbd5e1 !important;
 }
 
-/* Subtrair: Terracota / Coral Queimado suave */
-.btn-subtrair, button[className*="subtrair"] {
+/* Subtrair (Seu tom mostarda/oliva) */
+.btn-subtrair {
     background-color: #8d8220 !important; 
 }
-.btn-subtrair:hover, button[className*="subtrair"]:hover {
+.btn-subtrair:hover {
     background-color: #665e18 !important;
+}
+
+/* =================================================== */
+/*          ESTILO DA BARRA DO TOTAL DE TUDO           */
+/* =================================================== */
+.total-geral-caixa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    color: #0f172a;
+    padding: 16px 24px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 918px; /* Alinha perfeitamente com a largura máxima dos 3 cards de 290px + as lacunas (gaps) */
+    margin: 32px auto 0 auto;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.total-geral-caixa h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
 }
