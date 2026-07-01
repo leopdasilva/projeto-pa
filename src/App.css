@@ -46,6 +46,9 @@ header {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 50px;
 }
 
 /* --- 3. Coluna da Direita (Login + Funcionários) --- */

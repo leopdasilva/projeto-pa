@@ -63,9 +63,9 @@ function App() {
           <div className="funcionarios-container">
               <h2 className="titulo-funcionarios">Funcionários</h2>
               <div className="funcionarios-cards-wrapper">
-                <Funcionario nome="Alexandre Gaspari" cargo="Atendente" fotoUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPSvxlMQ0yxOc2hXkochHyY51xkZsBxKFDHw&s"/>
                 <Funcionario nome="Cesar Stati" cargo="Gerente" fotoUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwU2daGPdMx-ZYsHz8DuHeFBi_cqZtpUGF9Q&s"/>
                 <Funcionario nome="Donathan Goncalves" cargo="Chef de Cozinha" fotoUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDxliqPfoR4K-WKT7JoGovyVi794g6FrtKXQ&s"/>
+                <Funcionario nome="Alexandre Gaspari" cargo="Atendente" fotoUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPSvxlMQ0yxOc2hXkochHyY51xkZsBxKFDHw&s"/>
               </div>
           </div>
 
