@@ -10,18 +10,18 @@ function App() {
     { id: 1, nome: "X-Burguer", 
       preco: 15.90, 
       descricao: "Hambúrguer artesanal grelhado, muito queijo prato derretido e maionese especial da casa no pão brioche selado.", 
-      imagem: "https://images.pexels.com/photos/33673825/pexels-photo-33673825.jpeg"
+      imagem: "/imagens/xburguer.jpg"
     },
 
     { id: 2, nome: "X-Salada", preco: 17.50, 
       descricao: "Blend bovino suculento, queijo derretido, alface americana fresca, tomates selecionados e molho artesanal.", 
-      imagem: "https://images.pexels.com/photos/3738730/pexels-photo-3738730.jpeg" 
+      imagem: "/imagens/xsalada.jpg" 
     },
 
     { id: 3, nome: "Refrigerante", 
       preco: 6.00, 
       descricao: "Lata de 350ml trincando de gelada. Escolha o seu sabor favorito para acompanhar o seu lanche.", 
-      imagem: "https://images.pexels.com/photos/5860659/pexels-photo-5860659.jpeg" 
+      imagem: "/imagens/refri.jpg" 
     }
   ];
 
