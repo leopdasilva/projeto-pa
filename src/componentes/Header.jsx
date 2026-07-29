@@ -1,6 +1,6 @@
 import './Header.css'
-import logoLanchonete from '../assets/xpress-logo2.png'
-import subtitulo from '../assets/subtitulo.png'
+import logoLanchonete from '../../public/imagens/xpress-logo2.png'
+import subtitulo from '../../public/imagens/subtitulo.png'
 
 function Header() {
     return(

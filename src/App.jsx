@@ -7,15 +7,43 @@ import Contador from "./componentes/contador";
 
 function App() {
   const lanches = [
-    { id: 1, nome: "X-Burguer", preco: 15.90, descricao: "Hambúrguer artesanal grelhado, muito queijo prato derretido e maionese especial da casa no pão brioche selado.", imagem: "https://images.pexels.com/photos/33673825/pexels-photo-33673825.jpeg" },
-    { id: 2, nome: "X-Salada", preco: 17.50, descricao: "Blend bovino suculento, queijo derretido, alface americana fresca, tomates selecionados e molho artesanal.", imagem: "https://images.pexels.com/photos/3738730/pexels-photo-3738730.jpeg" },
-    { id: 3, nome: "Refrigerante", preco: 6.00, descricao: "Lata de 350ml trincando de gelada. Escolha o seu sabor favorito para acompanhar o seu lanche.", imagem: "https://images.pexels.com/photos/5860659/pexels-photo-5860659.jpeg" }
+    { id: 1, nome: "X-Burguer", 
+      preco: 15.90, 
+      descricao: "Hambúrguer artesanal grelhado, muito queijo prato derretido e maionese especial da casa no pão brioche selado.", 
+      imagem: "https://images.pexels.com/photos/33673825/pexels-photo-33673825.jpeg"
+    },
+
+    { id: 2, nome: "X-Salada", preco: 17.50, 
+      descricao: "Blend bovino suculento, queijo derretido, alface americana fresca, tomates selecionados e molho artesanal.", 
+      imagem: "https://images.pexels.com/photos/3738730/pexels-photo-3738730.jpeg" 
+    },
+
+    { id: 3, nome: "Refrigerante", 
+      preco: 6.00, 
+      descricao: "Lata de 350ml trincando de gelada. Escolha o seu sabor favorito para acompanhar o seu lanche.", 
+      imagem: "https://images.pexels.com/photos/5860659/pexels-photo-5860659.jpeg" 
+    }
   ];
 
   const funcionarios = [
-    { id: 1, nome: "Cesar Stati", cargo: "Gerente", fotoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwU2daGPdMx-ZYsHz8DuHeFBi_cqZtpUGF9Q&s" },
-    { id: 2, nome: "Donathan Goncalves", cargo: "Chef de Cozinha", fotoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDxliqPfoR4K-WKT7JoGovyVi794g6FrtKXQ&s" },
-    { id: 3, nome: "Alexandre Gaspari", cargo: "Atendente", fotoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPSvxlMQ0yxOc2hXkochHyY51xkZsBxKFDHw&s" }
+    { id: 1, 
+      nome: "Cesar Stati", 
+      cargo: "Gerente", 
+      fotoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwU2daGPdMx-ZYsHz8DuHeFBi_cqZtpUGF9Q&s" 
+    },
+
+    { id: 2,
+       nome: "Donathan Goncalves", 
+       cargo: "Chef de Cozinha", 
+       fotoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDxliqPfoR4K-WKT7JoGovyVi794g6FrtKXQ&s" 
+      },
+
+    { id: 3, 
+      nome: "Alexandre Gaspari", 
+      cargo: "Atendente", 
+      fotoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPSvxlMQ0yxOc2hXkochHyY51xkZsBxKFDHw&s" 
+    }
+
   ];
 
 
