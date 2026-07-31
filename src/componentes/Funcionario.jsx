@@ -1,18 +1,31 @@
-import './Funcionario.css'
+import "./Funcionario.css";
 
-function Funcionario(props) {
+function Funcionario({ nome, cargo, fotoUrl }) {
+
     return (
-      <>
+
         <div className="funcionario-card">
-          <img src={props.fotoUrl} alt={`Foto de ${props.nome}`} className="funcionario-foto"/>
-          <div className="funcionario-info">
-            <h3>{props.nome}</h3>
-            <p>{props.cargo}</p>
-          </div>
-        </div>  
-      </>
-      
-    )
-  }
-  
-  export default Funcionario;
+
+            <img
+                src={fotoUrl}
+                alt={nome}
+                className="funcionario-foto"
+            />
+
+            <div className="funcionario-info">
+
+                <h3>{nome}</h3>
+
+                <span className="cargo">
+                    {cargo}
+                </span>
+
+            </div>
+
+        </div>
+
+    );
+
+}
+
+export default Funcionario;

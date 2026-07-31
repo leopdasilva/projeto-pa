@@ -15,7 +15,6 @@ function App() {
       descricao: "Hambúrguer artesanal com queijo prato derretido, molho especial da casa e pão brioche levemente tostado.",
       imagem: "/imagens/xburguer.jpg"
     },
-
     {
       id: 2,
       nome: "X-Salada",
@@ -24,7 +23,6 @@ function App() {
       descricao: "Hambúrguer artesanal com queijo, alface crocante, tomate fresco e maionese especial no pão brioche.",
       imagem: "/imagens/xsalada.jpg"
     },
-
     {
       id: 3,
       nome: "Fanta Uva",
@@ -33,7 +31,6 @@ function App() {
       descricao: "Refrigerante Fanta Uva em lata de 350 ml, servido bem gelado para acompanhar seu lanche.",
       imagem: "/imagens/fantauva.jpg"
     },
-
     {
       id: 4,
       nome: "Coca-Cola",
@@ -42,7 +39,6 @@ function App() {
       descricao: "Coca-Cola tradicional em lata de 350 ml, refrescante e perfeita para qualquer refeição.",
       imagem: "/imagens/coca.jpg"
     },
-
     {
       id: 5,
       nome: "Batata Frita",
@@ -51,7 +47,6 @@ function App() {
       descricao: "Porção de batatas fritas douradas e crocantes, preparadas na hora e levemente temperadas.",
       imagem: "/imagens/batata.jpg"
     },
-
     {
       id: 6,
       nome: "Milk Shake",
@@ -60,7 +55,6 @@ function App() {
       descricao: "Milk shake cremoso preparado com sorvete e leite, disponível em deliciosos sabores.",
       imagem: "/imagens/milkshake.jpg"
     },
-
     {
       id: 7,
       nome: "Hot Dog",
@@ -69,7 +63,6 @@ function App() {
       descricao: "Cachorro-quente com salsicha, molho de tomate, milho, batata palha e maionese especial.",
       imagem: "/imagens/hotdog.jpg"
     },
-
     {
       id: 8,
       nome: "Suco Natural",
@@ -84,32 +77,27 @@ function App() {
     {
       id: 1,
       nome: "Cesar Stati",
-      cargo: "Gerente",
-      fotoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHagmZz2FCaJ4U7TjAYaELLWmLTMsFUaJkm399nwCARD9EpuUwTsz2t7E&s=10"
+      cargo: "CEO",
+      fotoUrl: "/imagens/ceo.png"
     },
-
     {
       id: 2,
       nome: "Donathan Goncalves",
       cargo: "Chef de Cozinha",
-      fotoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDxliqPfoR4K-WKT7JoGovyVi794g6FrtKXQ&s"
+      fotoUrl: "/imagens/chef.png"
     },
-
     {
       id: 3,
       nome: "Alexandre Gaspari",
       cargo: "Atendente",
-      fotoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPSvxlMQ0yxOc2hXkochHyY51xkZsBxKFDHw&s"
+      fotoUrl: "/imagens/atendente.png"
     }
   ];
 
-  // Total de itens do carrinho
   const [quantidadeCarrinho, setQuantidadeCarrinho] = useState(0);
-
-  // Produtos adicionados ao carrinho
   const [carrinho, setCarrinho] = useState([]);
 
-  function adicionarCarrinho(nome, quantidade) {
+  function adicionarCarrinho(nome, preco, quantidade) {
 
     setQuantidadeCarrinho(prev => prev + quantidade);
 
@@ -120,28 +108,27 @@ function App() {
       );
 
       if (produtoExistente) {
-
         return prev.map(item =>
           item.nome === nome
-            ? { ...item, quantidade: item.quantidade + quantidade }
+            ? {
+                ...item,
+                quantidade: item.quantidade + quantidade
+              }
             : item
         );
-
       }
 
       return [
         ...prev,
         {
           nome,
+          preco,
           quantidade
         }
       ];
-
     });
 
-    alert(
-      `${quantidade}x ${nome} ${quantidade === 1 ? "adicionado" : "adicionados"} ao carrinho`
-    );
+    alert(`${quantidade}x ${nome} adicionado ao carrinho`);
   }
 
   function limparCarrinho() {
@@ -149,12 +136,18 @@ function App() {
     setQuantidadeCarrinho(0);
   }
 
+  const totalCarrinho = carrinho.reduce(
+    (total, item) => total + (item.preco * item.quantidade),
+    0
+  );
+
   return (
     <div className="app-container">
 
       <Header
         quantidade={quantidadeCarrinho}
         carrinho={carrinho}
+        total={totalCarrinho}
         limparCarrinho={limparCarrinho}
       />
 
@@ -196,16 +189,22 @@ function App() {
 
           <div className="funcionarios-container">
 
-            <h2>Funcionários</h2>
+            <h2 className="titulo-funcionarios">
+              Funcionários
+            </h2>
 
-            {funcionarios.map(funcionario => (
-              <Funcionario
-                key={funcionario.id}
-                nome={funcionario.nome}
-                cargo={funcionario.cargo}
-                fotoUrl={funcionario.fotoUrl}
-              />
-            ))}
+            <div className="funcionarios-cards-wrapper">
+
+              {funcionarios.map(funcionario => (
+                <Funcionario
+                  key={funcionario.id}
+                  nome={funcionario.nome}
+                  cargo={funcionario.cargo}
+                  fotoUrl={funcionario.fotoUrl}
+                />
+              ))}
+
+            </div>
 
           </div>
 

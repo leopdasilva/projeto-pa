@@ -1,84 +1,147 @@
-/* CONTAINER DOS FUNCIONÁRIOS*/
-/* CONTAINER PRINCIPAL: Empilha o título no topo e os cards abaixo */
+/* ========================= */
+/* CONTAINER FUNCIONÁRIOS */
+/* ========================= */
+
 .funcionarios-container {
     display: flex;
-    flex-direction: column;    
-    align-items: center;       
+    flex-direction: column;
+    align-items: center;
+
     width: 100%;
-    background-color: #1e293b; 
-    padding: 40px 20px;
+
+    background: #1e293b;
+
+    padding: 45px 30px;
+
     margin-top: 40px;
+
+    border-radius: 18px;
+
     box-sizing: border-box;
-    border-radius: 16px;
 }
 
 .titulo-funcionarios {
-    color: #ffffff;            
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-top: 0;             
-    margin-bottom: 30px;      
-    letter-spacing: 0.5px;
-    text-align: center;
+
+    color: white;
+
+    font-size: 2rem;
+
+    margin-bottom: 40px;
+
+    letter-spacing: 1px;
+
 }
 
-/* BLOCO INTERNO DOS CARDS: Força apenas os cards a ficarem lado a lado */
+/* ========================= */
+/* WRAPPER DOS CARDS */
+/* ========================= */
+
 .funcionarios-cards-wrapper {
+
     display: flex;
-    flex-direction: row;       
-    flex-wrap: wrap;           
-    justify-content: center;   
-    gap: 30px;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 35px;
+
     width: 100%;
+
 }
 
-/* CARD INDIVIDUAL DO FUNCIONÁRIO */
+/* ========================= */
+/* CARD */
+/* ========================= */
+
 .funcionario-card {
-    background-color: #ffffff; 
-    border-radius: 12px;
-    padding: 20px;
-    width: 220px;
+
+    width: 250px;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 16px;
+
     text-align: center;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-    
-    /* Interatividade */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+
+    box-shadow: 0 8px 18px rgba(0,0,0,.18);
+
+    transition: .3s;
+
 }
 
-.funcionario-card:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+.funcionario-card:hover{
+
+    transform: translateY(-8px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.25);
+
 }
 
-/* ESTILIZAÇÃO DA FOTO */
-.funcionario-foto {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;        
-    object-fit: cover;         
-    background-color: #e2e8f0;
-    border: 3px solid #1958a0; 
-    margin-bottom: 15px;
-    transition: transform 0.3s ease;
+/* ========================= */
+/* FOTO */
+/* ========================= */
+
+.funcionario-foto{
+
+    width:130px;
+
+    height:130px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:4px solid #2563eb;
+
+    margin-bottom:20px;
+
+    transition:.3s;
+
 }
 
-.funcionario-card:hover .funcionario-foto {
-    transform: rotate(5px);
+.funcionario-card:hover .funcionario-foto{
+
+    transform:scale(1.08);
+
 }
 
-.funcionario-info h3 {
-    color: #0f172a;            
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin: 0 0 5px 0;
+/* ========================= */
+/* TEXTO */
+/* ========================= */
+
+.funcionario-info h3{
+
+    margin:0;
+
+    color:#1e293b;
+
+    font-size:1.3rem;
+
+    font-weight:700;
+
 }
 
-.funcionario-info p {
-    color: #64748b;            
-    font-size: 0.95rem;
-    margin: 0;
-    font-weight: 500;
-    text-transform: uppercase; 
-    letter-spacing: 0.5px;
+.cargo{
+
+    display:inline-block;
+
+    margin-top:12px;
+
+    padding:6px 12px;
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+    border-radius:20px;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+    letter-spacing:.5px;
+
 }
