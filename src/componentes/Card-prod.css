@@ -1,80 +1,141 @@
 .titulo-cardapio {
-    color: #1e293b ;            
-    font-size: 1.8rem;
+    color: #1e293b;
+    font-size: 1.9rem;
     font-weight: 700;
-    margin-top: 0;             
-    margin-bottom: 30px;      
-    letter-spacing: 0.5px;
     text-align: center;
+    margin: 20px 0 30px;
 }
 
-/* O container principal agora apenas agrupa verticalmente o título e o wrapper */
 .produtos-container {
     width: 100%;
     margin: 30px 0;
 }
 
-/* Esta nova classe herda as regras do Flexbox para alinhar os cards lado a lado */
 .produtos-cards-wrapper {
     display: flex;
-    flex-direction: row;       
-    justify-content: center;   
-    gap: 20px;                 
-    flex-wrap: wrap;           
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
     width: 100%;
 }
 
-/* Mantém as propriedades existentes dos seus cards */
 .produto-card {
-    text-align: center;
-    background-color: hsl(0, 0%, 100%);
+    background: #fff;
+    border-radius: 15px;
     border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 20px 40px;
-    width: 250px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    transition: all 0.3s ease;
-    cursor: pointer;
+    width: 280px;
+    padding: 18px;
     box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    transition: .3s;
 }
 
 .produto-card:hover {
-    transform: translateY(-5px);
-    border-color: #cbd5e1;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-.produto-card h3 {
-    color: #1e293b;
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-
-.produto-card p {
-    color: #1958a0; 
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin-top: 0;
-    transition: color 0.3s ease;
-}
-
-.descricao {
-    font-size: 0.9rem !important;   
-    color: #64748b !important;      
-    font-weight: normal !important; 
-    line-height: 1.4;              
-    margin: 10px 0 0 0 !important;  
-}
-
-.produto-card:hover p {
-    color: #76a2d1;
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,.15);
 }
 
 .produto-imagem {
-    width: 100%;               
-    height: 140px;             
-    object-fit: cover;        
-    border-radius: 8px;        
-    margin-bottom: 12px;       
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.produto-card h3 {
+    margin: 15px 0 8px;
+    color: #1e293b;
+    font-size: 1.4rem;
+}
+
+.categoria {
+    color: #f97316;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.preco {
+    color: #16a34a;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.descricao {
+    color: #64748b;
+    font-size: .9rem;
+    line-height: 1.5;
+    min-height: 70px;
+    margin-bottom: 20px;
+}
+
+/* ========================= */
+/* CONTADOR */
+/* ========================= */
+
+.controle-quantidade {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.controle-quantidade button {
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: #2563eb;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.controle-quantidade button:hover {
+    background: #1d4ed8;
+    transform: scale(1.08);
+}
+
+.controle-quantidade span {
+    width: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1e293b;
+}
+
+/* ========================= */
+/* BOTÃO CARRINHO */
+/* ========================= */
+
+.botao-carrinho {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+
+    background: #16a34a;
+    color: white;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.botao-carrinho:hover {
+    background: #15803d;
+}
+
+.botao-carrinho:active {
+    transform: scale(.98);
 }
