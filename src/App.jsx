@@ -202,21 +202,22 @@ function App() {
           {pagina === "carrinho" && (
 
             <Carrinho
-              carrinho={carrinho}
-              total={totalCompra}
-              limparCarrinho={limparCarrinho}
-              finalizarCompra={finalizarCompra}
+            carrinho={carrinho}
+            total={totalCarrinho}
+            limparCarrinho={limparCarrinho}
+            finalizarCompra={finalizarCompra}
             />
 
           )}
 
           {pagina === "pedido" && ( 
-            <Pedido 
-              compra={ultimaCompra} 
-              total={totalCompra} 
-              limparCarrinho={limparCarrinho} 
-              voltar={() => setPagina("cardapio")} 
-            /> )}
+            <Pedido
+              compra={ultimaCompra}
+              total={totalCompra}
+              limparCarrinho={limparCarrinho}
+              voltar={() => setPagina("cardapio")}
+            />
+            )}
 
         </main>
 
