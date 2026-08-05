@@ -3,6 +3,8 @@ import Header from "./componentes/Header";
 import Login from "./componentes/Login";
 import CardProduto from "./componentes/Card-prod";
 import Funcionario from "./componentes/Funcionario";
+import Carrinho from "./componentes/Carrinho";
+import Pedido from "./componentes/Pedido";
 
 function App() {
 
@@ -94,20 +96,22 @@ function App() {
     }
   ];
 
+  const [pagina, setPagina] = useState("cardapio");
   const [quantidadeCarrinho, setQuantidadeCarrinho] = useState(0);
   const [carrinho, setCarrinho] = useState([]);
+  const [ultimaCompra, setUltimaCompra] = useState([]);
+  const [totalCompra, setTotalCompra] = useState(0);
 
-  function adicionarCarrinho(nome, preco, quantidade) {
+  function adicionarCarrinho(nome, preco, categoria, imagem, quantidade) {
 
     setQuantidadeCarrinho(prev => prev + quantidade);
 
     setCarrinho(prev => {
 
-      const produtoExistente = prev.find(
-        item => item.nome === nome
-      );
+      const produtoExistente = prev.find(item => item.nome === nome);
 
       if (produtoExistente) {
+
         return prev.map(item =>
           item.nome === nome
             ? {
@@ -116,6 +120,7 @@ function App() {
               }
             : item
         );
+
       }
 
       return [
@@ -123,12 +128,16 @@ function App() {
         {
           nome,
           preco,
+          categoria,
+          imagem,
           quantidade
         }
       ];
+
     });
 
     alert(`${quantidade}x ${nome} adicionado ao carrinho`);
+
   }
 
   function limparCarrinho() {
@@ -136,8 +145,14 @@ function App() {
     setQuantidadeCarrinho(0);
   }
 
+  function finalizarCompra() { 
+    setUltimaCompra(carrinho); 
+    setTotalCompra(totalCarrinho); 
+    setPagina("pedido"); 
+  }
+
   const totalCarrinho = carrinho.reduce(
-    (total, item) => total + (item.preco * item.quantidade),
+    (total, item) => total + item.preco * item.quantidade,
     0
   );
 
@@ -146,25 +161,27 @@ function App() {
 
       <Header
         quantidade={quantidadeCarrinho}
-        carrinho={carrinho}
-        total={totalCarrinho}
-        limparCarrinho={limparCarrinho}
+        mostrarCardapio={() => setPagina("cardapio")}
+        mostrarCarrinho={() => setPagina("carrinho")}
       />
 
       <div className="conteudo-principal">
 
         <main className="coluna-esquerda">
 
-          <div className="produtos-container">
+          {pagina === "cardapio" && (
 
-            <h2 className="titulo-cardapio">
-              Cardápio
-            </h2>
+            <div className="produtos-container">
 
-            <div className="produtos-cards-wrapper">
+              <h2 className="titulo-cardapio">
+                Cardápio
+              </h2>
 
-              {produtos.map(produto => (
-                <CardProduto
+              <div className="produtos-cards-wrapper">
+
+                {produtos.map(produto => (
+
+                  <CardProduto
                   key={produto.id}
                   nome={produto.nome}
                   preco={produto.preco}
@@ -172,12 +189,34 @@ function App() {
                   descricao={produto.descricao}
                   imagem={produto.imagem}
                   adicionarCarrinho={adicionarCarrinho}
-                />
-              ))}
+                  />
+
+                ))}
+
+              </div>
 
             </div>
 
-          </div>
+          )}
+
+          {pagina === "carrinho" && (
+
+            <Carrinho
+              carrinho={carrinho}
+              total={totalCompra}
+              limparCarrinho={limparCarrinho}
+              finalizarCompra={finalizarCompra}
+            />
+
+          )}
+
+          {pagina === "pedido" && ( 
+            <Pedido 
+              compra={ultimaCompra} 
+              total={totalCompra} 
+              limparCarrinho={limparCarrinho} 
+              voltar={() => setPagina("cardapio")} 
+            /> )}
 
         </main>
 
@@ -196,12 +235,14 @@ function App() {
             <div className="funcionarios-cards-wrapper">
 
               {funcionarios.map(funcionario => (
+
                 <Funcionario
                   key={funcionario.id}
                   nome={funcionario.nome}
                   cargo={funcionario.cargo}
                   fotoUrl={funcionario.fotoUrl}
                 />
+
               ))}
 
             </div>

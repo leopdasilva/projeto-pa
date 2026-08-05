@@ -20,11 +20,13 @@ function CardProduto(props) {
         props.adicionarCarrinho(
             props.nome,
             props.preco,
+            props.categoria,
+            props.imagem,
             quantidade
         )
-
+    
         setQuantidade(1)
-
+    
     }
 
     return (

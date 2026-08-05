@@ -1,0 +1,155 @@
+.carrinho-container{
+    width:100%;
+    background:#fff;
+    border-radius:15px;
+    padding:30px;
+    box-sizing:border-box;
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+}
+
+.titulo-carrinho{
+    color: #1e293b;
+    font-size: 1.9rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 20px 0 30px;
+}
+
+.carrinho-vazio{
+    text-align:center;
+    padding:50px 20px;
+    color:#64748b;
+}
+
+.lista-carrinho{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.item-carrinho{
+    display:flex;
+    gap:20px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:12px;
+    padding:20px;
+    align-items:center;
+    transition:.3s;
+}
+
+.item-carrinho:hover{
+    transform:translateY(-3px);
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.imagem-item{
+    width:140px;
+    height:140px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.info-item{
+    flex:1;
+}
+
+.info-item h3{
+    margin:0;
+    color:#1e293b;
+    font-size:1.5rem;
+}
+
+.categoria{
+    color:#2563eb;
+    font-weight:bold;
+    margin:8px 0 18px;
+}
+
+.info-item p{
+    margin:8px 0;
+    color:#475569;
+}
+
+.subtotal{
+    color:#15803d !important;
+    font-size:1.1rem;
+}
+
+.rodape-carrinho{
+    margin-top:35px;
+    border-top:2px solid #e2e8f0;
+    padding-top:25px;
+}
+
+.rodape-carrinho h2{
+    text-align:right;
+    color:#1e293b;
+    margin-bottom:20px;
+}
+
+.botoes-carrinho{
+    display:flex;
+    justify-content:flex-end;
+    gap:15px;
+}
+
+.btn-limpar,
+.btn-finalizar{
+    border:none;
+    padding:12px 22px;
+    border-radius:10px;
+    font-size:1rem;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn-limpar{
+    background:#dc2626;
+    color:white;
+}
+
+.btn-limpar:hover{
+    background:#b91c1c;
+}
+
+.btn-finalizar{
+    background:#16a34a;
+    color:white;
+}
+
+.btn-finalizar:hover{
+    background:#15803d;
+}
+
+.resumo-carrinho{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+    padding:15px 20px;
+    background:#f8fafc;
+    border-radius:10px;
+    border:1px solid #e2e8f0;
+}
+
+.resumo-carrinho h2,
+.resumo-carrinho h3{
+    margin:0;
+    color:#1e293b;
+}
+
+.resumo-carrinho h3{
+    font-size:1.1rem;
+    font-weight:600;
+}
+
+.resumo-carrinho h2{
+    font-size:1.4rem;
+}
+
+.resumo-carrinho span{
+    color:#2563eb;
+    font-weight:bold;
+}
