@@ -154,3 +154,47 @@
 .recibo button:hover{
     background:#1d4ed8;
 }
+
+.cozinha{
+    margin-top:35px;
+    background:#fff7ed;
+    border:2px solid #fdba74;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+
+.cozinha h2{
+    color:#c2410c;
+    margin-bottom:15px;
+}
+
+.mensagem-cozinha{
+    margin:20px 0;
+    color:#7c2d12;
+    font-size:1.05rem;
+}
+
+.produtos-cozinha{
+    margin-top:20px;
+}
+
+.produtos-cozinha h3{
+    color:#1e293b;
+    margin-bottom:15px;
+}
+
+.produto-cozinha{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 15px;
+    margin-bottom:10px;
+    background:white;
+    border-radius:8px;
+    border-left:5px solid #f97316;
+}
+
+.produto-cozinha strong{
+    color:#16a34a;
+}

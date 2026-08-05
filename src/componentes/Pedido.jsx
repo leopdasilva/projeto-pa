@@ -13,13 +13,17 @@ function Pedido({ compra, total, limparCarrinho, voltar }) {
     const [etapaAtual, setEtapaAtual] = useState(0);
     const [entregue, setEntregue] = useState(false);
 
+    const [numeroPedido] = useState(
+        Math.floor(Math.random() * 9000) + 1000
+    );
+
     useEffect(() => {
 
         if (etapaAtual < etapas.length - 1) {
 
             const timer = setTimeout(() => {
                 setEtapaAtual(prev => prev + 1);
-            }, 3000);
+            }, 8000);
 
             return () => clearTimeout(timer);
 
@@ -71,11 +75,52 @@ function Pedido({ compra, total, limparCarrinho, voltar }) {
 
             </div>
 
+            {(etapaAtual === 0 || etapaAtual === 1) && (
+
+                <div className="cozinha">
+
+                    <h2>👨‍🍳 Cozinha Xpress Food</h2>
+
+                    <p>
+                        <strong>Pedido Nº:</strong> #{numeroPedido}
+                    </p>
+
+                    <p className="mensagem-cozinha">
+                        Seu pedido foi enviado para a cozinha e nossa equipe já está preparando tudo para você.
+                    </p>
+
+                    <div className="produtos-cozinha">
+
+                        <h3>Itens do Pedido</h3>
+
+                        {compra.map((item, index) => (
+
+                            <div
+                                className="produto-cozinha"
+                                key={index}
+                            >
+                                <span>
+                                    {item.quantidade}x {item.nome}
+                                </span>
+                            </div>
+
+                        ))}
+
+                    </div>
+
+                </div>
+
+            )}
+
             {entregue && (
 
                 <div className="recibo">
 
                     <h2>🧾 Recibo</h2>
+
+                    <p>
+                        <strong>Pedido Nº:</strong> #{numeroPedido}
+                    </p>
 
                     {compra.map((item, index) => (
 
@@ -86,9 +131,7 @@ function Pedido({ compra, total, limparCarrinho, voltar }) {
                             </span>
 
                             <span>
-                                {item.quantidade}x - R$ {(item.preco * item.quantidade)
-                                    .toFixed(2)
-                                    .replace(".", ",")}
+                                {item.quantidade}x - R$ {(item.preco * item.quantidade).toFixed(2).replace(".", ",")}
                             </span>
 
                         </div>
