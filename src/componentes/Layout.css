@@ -1,0 +1,42 @@
+.conteudo-principal{
+
+    display:flex;
+
+    width:100%;
+
+    padding:30px 40px;
+
+    gap:40px;
+
+}
+
+
+.coluna-esquerda{
+
+    flex:1;
+
+}
+
+
+.coluna-direita{
+
+    width:360px;
+
+}
+
+
+@media(max-width:1024px){
+
+    .conteudo-principal{
+
+        flex-direction:column;
+
+    }
+
+    .coluna-direita{
+
+        width:100%;
+
+    }
+
+}

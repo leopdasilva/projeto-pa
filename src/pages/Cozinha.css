@@ -1,0 +1,106 @@
+.cozinha-container{
+
+    min-height:100vh;
+
+    padding:40px;
+
+    background:#111827;
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+
+
+.cozinha-container h1{
+
+    font-size:2.8rem;
+
+    margin-bottom:40px;
+
+}
+
+
+
+.pedido-cozinha{
+
+    width:450px;
+
+    background:white;
+
+    color:#1e293b;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.25);
+
+}
+
+
+
+.pedido-cozinha h2{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.item-cozinha{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:12px;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+
+
+.pedido-cozinha h3{
+
+    text-align:right;
+
+    margin-top:25px;
+
+}
+
+
+
+.pedido-cozinha button{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}

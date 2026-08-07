@@ -1,6 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import "./Carrinho.css";
 
-function Carrinho({ carrinho, total, limparCarrinho, finalizarCompra }) {
+function Carrinho({
+    carrinho,
+    total,
+    limparCarrinho,
+    finalizarCompra,
+    removerItem,
+    aumentarQuantidade,
+    diminuirQuantidade
+}) {
     const totalItens = carrinho.reduce(
         (total, item) => total + item.quantidade,
         0
@@ -41,10 +50,28 @@ function Carrinho({ carrinho, total, limparCarrinho, finalizarCompra }) {
                                             {item.categoria}
                                         </p>
 
-                                        <p>
-                                            Quantidade:
-                                            <strong> {item.quantidade}</strong>
-                                        </p>
+                                        <div className="controle-quantidade">
+
+                                            <button
+                                                className="btn-qtd"
+                                                disabled={item.quantidade === 1}
+                                                onClick={() => diminuirQuantidade(item.nome)}
+                                            >
+                                                    −
+                                            </button>
+
+                                            <span className="numero-qtd">
+                                                {item.quantidade}
+                                            </span>
+
+                                            <button
+                                                className="btn-qtd"
+                                                onClick={() => aumentarQuantidade(item.nome)}
+                                            >
+                                                +
+                                            </button>
+
+                                        </div>
 
                                         <p>
                                             Preço Unitário:
@@ -59,6 +86,21 @@ function Carrinho({ carrinho, total, limparCarrinho, finalizarCompra }) {
                                                 {" "}R$ {(item.preco*item.quantidade).toFixed(2).replace(".",",")}
                                             </strong>
                                         </p>
+
+                                        <div className="acoes-item">
+                                            <button
+                                                className="btn-remover"
+                                                onClick={() => {
+                                                    if (window.confirm(`Deseja remover ${item.nome} do carrinho?`)) {
+                                                        removerItem(item.nome);
+                                                    }
+                                                }}
+                                            >
+                                                🗑
+                                            </button>
+
+                                        </div>
+
                                     </div>
                                 </div>
                             ))

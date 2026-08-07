@@ -1,10 +1,13 @@
 import { useState } from "react";
-import Header from "./componentes/Header";
-import Login from "./componentes/Login";
-import CardProduto from "./componentes/Card-prod";
-import Funcionario from "./componentes/Funcionario";
-import Carrinho from "./componentes/Carrinho";
-import Pedido from "./componentes/Pedido";
+import { Routes, Route } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+import Layout from "./componentes/Layout";
+import Cozinha from "./pages/Cozinha";
+import Login from "./pages/Login";
+import Home from "./pages/Home";
+import Carrinho from "./pages/Carrinho";
+import Pedido from "./pages/Pedido";
 
 function App() {
 
@@ -96,11 +99,10 @@ function App() {
     }
   ];
 
-  const [pagina, setPagina] = useState("cardapio");
+  const navigate = useNavigate();
   const [quantidadeCarrinho, setQuantidadeCarrinho] = useState(0);
   const [carrinho, setCarrinho] = useState([]);
-  const [ultimaCompra, setUltimaCompra] = useState([]);
-  const [totalCompra, setTotalCompra] = useState(0);
+  const [pedidos,setPedidos] = useState([]);
 
   function adicionarCarrinho(nome, preco, categoria, imagem, quantidade) {
 
@@ -145,10 +147,77 @@ function App() {
     setQuantidadeCarrinho(0);
   }
 
-  function finalizarCompra() { 
-    setUltimaCompra(carrinho); 
-    setTotalCompra(totalCarrinho); 
-    setPagina("pedido"); 
+  function finalizarCompra(){
+
+    const novoPedido = {
+
+        numero:
+        Math.floor(Math.random() * 9000) + 1000,
+
+        produtos: carrinho,
+
+        total: totalCarrinho,
+
+        status:"Pedido Recebido"
+
+    };
+
+
+    setPedidos(prev => [
+        ...prev,
+        novoPedido
+    ]);
+
+
+    navigate("/pedido");
+
+  }
+
+
+  function removerItem(nome) {
+
+    const itemRemovido = carrinho.find(item => item.nome === nome);
+
+    setCarrinho(prev =>
+      prev.filter(item => item.nome !== nome)
+    );
+
+    if (itemRemovido) {
+      setQuantidadeCarrinho(prev => prev - itemRemovido.quantidade);
+    }
+
+  }
+
+  function aumentarQuantidade(nome) {
+
+    setCarrinho(prev =>
+      prev.map(item =>
+        item.nome === nome
+          ? { ...item, quantidade: item.quantidade + 1 }
+          : item
+      )
+    );
+  
+    setQuantidadeCarrinho(prev => prev + 1);
+  
+  }
+  
+  function diminuirQuantidade(nome) {
+
+    const item = carrinho.find(item => item.nome === nome);
+  
+    if (!item || item.quantidade === 1) return;
+  
+    setCarrinho(prev =>
+      prev.map(item =>
+        item.nome === nome
+          ? { ...item, quantidade: item.quantidade - 1 }
+          : item
+      )
+    );
+  
+    setQuantidadeCarrinho(prev => prev - 1);
+  
   }
 
   const totalCarrinho = carrinho.reduce(
@@ -157,105 +226,81 @@ function App() {
   );
 
   return (
-    <div className="app-container">
 
-      <Header
-        quantidade={quantidadeCarrinho}
-        mostrarCardapio={() => setPagina("cardapio")}
-        mostrarCarrinho={() => setPagina("carrinho")}
-      />
+    <Routes>
 
-      <div className="conteudo-principal">
+    {/* LOGIN */}
+    <Route
+        path="/"
+        element={<Login />}
+    />
 
-        <main className="coluna-esquerda">
 
-          {pagina === "cardapio" && (
-
-            <div className="produtos-container">
-
-              <h2 className="titulo-cardapio">
-                Cardápio
-              </h2>
-
-              <div className="produtos-cards-wrapper">
-
-                {produtos.map(produto => (
-
-                  <CardProduto
-                  key={produto.id}
-                  nome={produto.nome}
-                  preco={produto.preco}
-                  categoria={produto.categoria}
-                  descricao={produto.descricao}
-                  imagem={produto.imagem}
-                  adicionarCarrinho={adicionarCarrinho}
-                  />
-
-                ))}
-
-              </div>
-
-            </div>
-
-          )}
-
-          {pagina === "carrinho" && (
-
-            <Carrinho
-            carrinho={carrinho}
-            total={totalCarrinho}
-            limparCarrinho={limparCarrinho}
-            finalizarCompra={finalizarCompra}
+    {/* ÁREA DO CLIENTE */}
+    <Route
+        element={
+            <Layout
+                quantidadeCarrinho={quantidadeCarrinho}
             />
+        }
+    >
 
-          )}
-
-          {pagina === "pedido" && ( 
-            <Pedido
-              compra={ultimaCompra}
-              total={totalCompra}
-              limparCarrinho={limparCarrinho}
-              voltar={() => setPagina("cardapio")}
-            />
-            )}
-
-        </main>
-
-        <aside className="coluna-direita">
-
-          <div className="login-sidebar">
-            <Login login="Login" />
-          </div>
-
-          <div className="funcionarios-container">
-
-            <h2 className="titulo-funcionarios">
-              Funcionários
-            </h2>
-
-            <div className="funcionarios-cards-wrapper">
-
-              {funcionarios.map(funcionario => (
-
-                <Funcionario
-                  key={funcionario.id}
-                  nome={funcionario.nome}
-                  cargo={funcionario.cargo}
-                  fotoUrl={funcionario.fotoUrl}
+        <Route
+            path="/home"
+            element={
+                <Home
+                    produtos={produtos}
+                    funcionarios={funcionarios}
+                    adicionarCarrinho={adicionarCarrinho}
                 />
+            }
+        />
 
-              ))}
 
-            </div>
+        <Route
+            path="/carrinho"
+            element={
+                <Carrinho
+                    carrinho={carrinho}
+                    total={totalCarrinho}
+                    limparCarrinho={limparCarrinho}
+                    finalizarCompra={finalizarCompra}
+                    removerItem={removerItem}
+                    aumentarQuantidade={aumentarQuantidade}
+                    diminuirQuantidade={diminuirQuantidade}
+                />
+            }
+        />
 
-          </div>
 
-        </aside>
+        <Route
+            path="/pedido"
+            element={
+              <Pedido
+                  pedido={pedidos[pedidos.length - 1]}
+                  limparCarrinho={limparCarrinho}
+                  voltar={() => navigate("/home")}
+              />
+            }
+        />
 
-      </div>
+    </Route>
 
-    </div>
-  );
+
+    {/* ÁREA DA COZINHA */}
+    <Route
+      path="/cozinha"
+      element={
+          <Cozinha
+              pedidos={pedidos}
+          />
+      }
+    />
+
+
+</Routes>
+
+);
 }
 
 export default App;

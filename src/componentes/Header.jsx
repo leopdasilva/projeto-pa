@@ -1,9 +1,22 @@
-import './Header.css'
+import { useNavigate } from "react-router-dom";
+import "./Header.css";
 
-function Header({ quantidade, mostrarCardapio, mostrarCarrinho }) {
+function Header({ quantidade }) {
+
+    const navigate = useNavigate();
+
+
+    function logout(){
+
+        navigate("/");
+
+    }
+
 
     return (
+
         <header className="titulo">
+
 
             <div className="logo-container">
 
@@ -11,32 +24,69 @@ function Header({ quantidade, mostrarCardapio, mostrarCarrinho }) {
                     ✦ XPRESS FOOD ✦
                 </h1>
 
+
                 <p className="logo-subtitulo">
                     ❖ Pediu? Chegou!
                 </p>
 
+
             </div>
+
+
 
             <nav className="menu-header">
 
-                <button
-                    className="btn-header"
-                    onClick={mostrarCardapio}
-                >
-                    🍔 Cardápio
-                </button>
 
                 <button
-                    className="btn-header btn-carrinho"
-                    onClick={mostrarCarrinho}
+
+                    className="btn-header"
+
+                    onClick={() => navigate("/home")}
+
                 >
-                    🛒 Carrinho ({quantidade})
+
+                    🍔 Cardápio
+
                 </button>
+
+
+
+
+                <button
+
+                    className="btn-header btn-carrinho"
+
+                    onClick={() => navigate("/carrinho")}
+
+                >
+
+                    🛒 Carrinho ({quantidade})
+
+                </button>
+
+
+
+                <button
+
+                    className="btn-header btn-logout"
+
+                    onClick={logout}
+
+                >
+
+                    ↪ Logout
+
+                </button>
+
+
 
             </nav>
 
+
         </header>
+
     )
+
 }
 
-export default Header
+export default Header;

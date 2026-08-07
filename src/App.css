@@ -1,193 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap');
 
-/* --- Reset Geral --- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-  font-family: 'Raleway', sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
-  width: 100vw;
-  overflow-x: hidden;
-}
 
-.app-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-height: 100vh;
-}
+body{
 
-/* --- 1. Header (Topo Total) --- */
-header {
-  width: 100%;
-  background-color: #232233; /* Cor escura do seu cabeçalho */
-  color: white;
-  padding: 30px 40px;
-  text-align: center;
-}
+    font-family:'Raleway',sans-serif;
 
-/* --- Wrapper do Conteúdo (Flexbox Horizontal) --- */
-.conteudo-principal {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  padding: 30px 40px;
-  gap: 40px;
-}
+    background:#f8f9fa;
 
-/* --- 2. Coluna da Esquerda (Cardápio + Caixa) --- */
-.coluna-esquerda {
-  flex: 1; /* Ocupa todo o espaço restante da tela */
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  border: 1px solid #cccccc;
-  border-radius: 5px;
-  padding: 50px;
-}
+    color:#333;
 
-/* --- 3. Coluna da Direita (Login + Funcionários) --- */
-.coluna-direita {
-  width: 360px; /* Largura fixa ideal para os painéis laterais */
-  display: flex;
-  flex-direction: column;
-  gap: 30px; /* Espaço entre o Login e o card de Funcionários */
-}
+    width:100vw;
 
-/* Customização dos containers da direita */
-.login-sidebar {
-  background-color: #ffffff;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
+    overflow-x:hidden;
 
-.funcionarios-container {
-  background-color: #1d2030; /* Azul escuro do seu painel de funcionários */
-  color: white;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-/* --- Alinhamento dos Cards Internos --- */
-.produtos-cards-wrapper,
-.contador-cards-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-top: 15px;
-}
-
-/* Para os funcionários na lateral ficarem um abaixo do outro ou responsivos */
-.funcionarios-cards-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 15px;
-  align-items: center; /* 👈 Centraliza os cards brancos horizontalmente */
-}
-
-/* Títulos das seções */
-h2 {
-  font-size: 1.5rem;
-  color: #1d3557;
-  border-bottom: 2px solid #e63946;
-  padding-bottom: 5px;
-  margin-bottom: 15px;
-}
-
-.funcionarios-container h2 {
-  color: #fff;
-  border-bottom: 2px solid #fff;
-}
-
-.total-geral-caixa {
-  margin-top: 25px;
-  background-color: #1d3557;
-  color: white;
-  padding: 15px 20px;
-  border-radius: 8px;
-  font-size: 1.2rem;
-  
-  /* Mudanças para centralizar: */
-  display: block;         /* Muda de inline-block para block */
-  max-width: 500px;       /* Define um limite elegante para a largura da barra */
-  margin-left: auto;      /* Empurra a margem esquerda */
-  margin-right: auto;     /* Empurra a margem direita, centralizando-a */
-  text-align: center;     /* Centraliza o texto do h3 lá dentro */
-}
-
-/* --- Responsividade para Celulares --- */
-@media (max-width: 1024px) {
-  .conteudo-principal {
-    flex-direction: column;
-    padding: 20px;
-  }
-  .coluna-direita {
-    width: 100%;
-  }
-}
-
-/* --- Responsividade Completa (Tablets e Celulares) --- */
-
-/* 1. TABLETS (Telas de até 1024px, como iPads) */
-@media (max-width: 1024px) {
-  .conteudo-principal {
-    flex-direction: column; /* Joga a coluna da direita (Login/Funcionários) para baixo do cardápio */
-    padding: 20px;
-    gap: 30px;
-  }
-
-  .coluna-direita {
-    width: 100%; /* Faz a barra lateral ocupar a largura total */
-  }
-
-  /* Faz os cards de funcionários ficarem lado a lado em tablets em vez de uma lista vertical comprida */
-  .funcionarios-cards-wrapper {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  /* Centraliza melhor os títulos no tablet */
-  h2 {
-    text-align: center;
-  }
-}
-
-/* 2. CELULARES (Telas de até 600px, como iPhones e Androids) */
-@media (max-width: 600px) {
-  header {
-    padding: 20px;
-  }
-  
-  .conteudo-principal {
-    padding: 15px 10px;
-    gap: 25px;
-  }
-
-  /* Garante que os wrappers de produtos, caixa e funcionários centralizem os itens no celular */
-  .produtos-cards-wrapper,
-  .contador-cards-wrapper,
-  .funcionarios-cards-wrapper {
-    justify-content: center;
-  }
-
-  /* Faz com que a barra de total ocupe quase a tela toda no celular */
-  .total-geral-caixa {
-    width: 100%;
-    max-width: 100%;
-  }
-  
-  /* Caso os componentes internos de inputs/botões do Login precisem de 100% */
-  .login-sidebar input, 
-  .login-sidebar button {
-    width: 100%;
-  }
 }

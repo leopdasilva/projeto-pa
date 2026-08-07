@@ -1,0 +1,252 @@
+/* ============================= */
+/* LAYOUT PRINCIPAL HOME */
+/* ============================= */
+
+.conteudo-principal {
+
+    display:flex;
+
+    flex-direction:row;
+
+    width:100%;
+
+    min-height:calc(100vh - 100px);
+
+    padding:30px 40px;
+
+    gap:40px;
+
+    background:#f8fafc;
+
+}
+
+
+/* ============================= */
+/* COLUNA DO CARDÁPIO */
+/* ============================= */
+
+.coluna-esquerda {
+
+    flex:1;
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:40px;
+
+    border:1px solid #e2e8f0;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.08);
+
+}
+
+
+/* ============================= */
+/* CARDÁPIO */
+/* ============================= */
+
+.produtos-container{
+
+    width:100%;
+
+}
+
+
+.titulo-cardapio{
+
+    text-align:center;
+
+    font-size:2.2rem;
+
+    color:#1e293b;
+
+    margin-bottom:35px;
+
+    padding-bottom:12px;
+
+    border-bottom:3px solid #e63946;
+
+}
+
+
+
+.produtos-cards-wrapper{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:30px;
+
+}
+
+
+/* ============================= */
+/* COLUNA FUNCIONÁRIOS */
+/* ============================= */
+
+
+.coluna-direita{
+
+    width:330px;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+/* ============================= */
+/* FUNCIONÁRIOS */
+/* ============================= */
+
+
+.funcionarios-container{
+
+    background:#1d2030;
+
+    color:white;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.15);
+
+}
+
+
+
+.titulo-funcionarios{
+
+    color:white;
+
+    text-align:center;
+
+    font-size:1.7rem;
+
+    margin-bottom:25px;
+
+    padding-bottom:10px;
+
+    border-bottom:2px solid white;
+
+}
+
+
+
+.funcionarios-cards-wrapper{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
+
+/* ============================= */
+/* ANIMAÇÕES */
+/* ============================= */
+
+
+.coluna-esquerda,
+.funcionarios-container{
+
+    animation:aparecer .5s ease;
+
+}
+
+
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* ============================= */
+/* RESPONSIVIDADE */
+/* ============================= */
+
+
+@media(max-width:1024px){
+
+
+    .conteudo-principal{
+
+        flex-direction:column;
+
+        padding:20px;
+
+    }
+
+
+
+    .coluna-direita{
+
+        width:100%;
+
+    }
+
+
+
+    .funcionarios-cards-wrapper{
+
+        flex-direction:row;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+
+}
+
+
+@media(max-width:600px){
+
+    .conteudo-principal{
+        padding:15px;
+    }
+
+    .coluna-esquerda{
+        padding:20px;
+    }
+
+    .titulo-cardapio{
+        font-size:1.8rem;
+    }
+
+    .produtos-cards-wrapper{
+        gap:20px;
+    }
+
+}

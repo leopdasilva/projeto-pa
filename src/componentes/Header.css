@@ -72,3 +72,13 @@
 .btn-carrinho:hover{
     background:#1d4ed8;
 }
+
+.btn-logout{
+    background:#e63946;
+    color:white;
+
+}
+
+.btn-logout:hover{
+    background:#c1121f;
+}
