@@ -1,42 +1,52 @@
+/* ========================= */
+/* LAYOUT GERAL */
+/* ========================= */
+
 .page-shell {
-    width: 100%;
-    box-sizing: border-box;
-    padding-top: 210px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 210px;
 }
 
 .conteudo-principal {
-    display: flex;
-    flex-direction: row;
-
-    width: 100%;
-    min-height: 100vh;
-
-    padding: 0 40px 30px 40px;
-
-    gap: 40px;
-
-    box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 40px 30px 40px;
+  gap: 40px;
+  box-sizing: border-box;
 }
 
 .coluna-esquerda {
-    flex: 1;
-    min-width: 0;
+  flex: 1;
+  min-width: 0;
 }
 
 .coluna-direita {
-    width: 360px;
-    flex-shrink: 0;
+  width: 360px;
+  flex-shrink: 0;
 }
 
 @media (max-width: 1024px) {
+  .conteudo-principal {
+    flex-direction: column;
+    padding: 0 20px 30px 20px;
+  }
 
-    .conteudo-principal {
-        flex-direction: column;
-        padding: 0 20px 30px 20px;
-    }
+  .coluna-direita {
+    width: 100%;
+  }
+}
 
-    .coluna-direita {
-        width: 100%;
-    }
+@media (max-width: 768px) {
+  .page-shell {
+    padding-top: 260px;
+  }
 
+  .conteudo-principal {
+    padding-left: 14px;
+    padding-right: 14px;
+    gap: 24px;
+  }
 }

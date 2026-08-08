@@ -1,201 +1,205 @@
-.pedido-container{
-    width:100%;
-    background:#ffffff;
-    border-radius:16px;
-    padding:40px;
-    box-sizing:border-box;
-    box-shadow:0 8px 20px rgba(0,0,0,.12);
+/* ========================= */
+/* PEDIDO */
+/* ========================= */
+
+.pedido-container {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-.titulo-pedido{
-    color: #1e293b;
-    font-size: 1.9rem;
-    font-weight: 700;
-    text-align: center;
-    margin: 20px 0 30px;
+.titulo-pedido {
+  color: #1e293b;
+  font-size: 1.9rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 20px 0 30px;
 }
 
-.linha-progresso{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    margin-bottom:50px;
-    gap: 12px;
+.linha-progresso {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 50px;
+  gap: 12px;
 }
 
-.etapa{
-    flex:1;
-    position:relative;
-    text-align:center;
-    color:#94a3b8;
+.etapa {
+  flex: 1;
+  position: relative;
+  text-align: center;
+  color: #94a3b8;
 }
 
-.etapa:not(:first-child)::before{
-    content:"";
-    position:absolute;
-    top:30px;
-    left:-50%;
-    width:100%;
-    height:6px;
-    background:#cbd5e1;
-    z-index:0;
+.etapa:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: -50%;
+  width: 100%;
+  height: 6px;
+  background: #cbd5e1;
+  z-index: 0;
 }
 
-.etapa.ativa:not(:first-child)::before{
-    background:#16a34a;
+.etapa.ativa:not(:first-child)::before {
+  background: #16a34a;
 }
 
-.circulo{
-    width:60px;
-    height:60px;
-    margin:0 auto 15px;
-    border-radius:50%;
-    background:#cbd5e1;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:1.3rem;
-    font-weight:bold;
-    position:relative;
-    z-index:1;
-    transition:.4s;
+.circulo {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+  transition: 0.4s;
 }
 
-.etapa.ativa .circulo{
-    background:linear-gradient(135deg, #16a34a, #22c55e);
-    box-shadow:0 8px 18px rgba(34,197,94,.24);
+.etapa.ativa .circulo {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  box-shadow: 0 8px 18px rgba(34, 197, 94, 0.24);
 }
 
-.etapa p{
-    font-size:1rem;
-    font-weight:600;
-    margin-top:10px;
+.etapa p {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 10px;
 }
 
-.status-pedido{
-    background:linear-gradient(135deg, #f8fafc, #eff6ff);
-    border:1px solid #dbeafe;
-    border-radius:12px;
-    padding:25px;
-    text-align:center;
+.status-pedido {
+  background: linear-gradient(135deg, #f8fafc, #eff6ff);
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
 }
 
-.status-pedido h3{
-    margin-bottom:10px;
-    color:#1e293b;
+.status-pedido h3 {
+  margin-bottom: 10px;
+  color: #1e293b;
 }
 
-.status{
-    font-size:1.4rem;
-    font-weight:bold;
-    color:#2563eb;
+.status {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #2563eb;
 }
 
-.mensagem-final{
-    margin-top:35px;
-    text-align:center;
-    padding:25px;
-    border-radius:12px;
-    background:#dcfce7;
+.mensagem-final {
+  margin-top: 35px;
+  text-align: center;
+  padding: 25px;
+  border-radius: 12px;
+  background: #dcfce7;
 }
 
-.mensagem-final h2{
-    color:#15803d;
-    margin-bottom:10px;
+.mensagem-final h2 {
+  color: #15803d;
+  margin-bottom: 10px;
 }
 
-.mensagem-final p{
-    color:#166534;
+.mensagem-final p {
+  color: #166534;
 }
 
-.recibo{
-    max-width:600px;
-    margin:40px auto;
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
+.recibo {
+  max-width: 600px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.recibo h2{
-    text-align:center;
-    color:#1e293b;
-    margin-bottom:25px;
+.recibo h2 {
+  text-align: center;
+  color: #1e293b;
+  margin-bottom: 25px;
 }
 
-.linha-recibo{
-    display:flex;
-    justify-content:space-between;
-    padding:10px 0;
-    border-bottom:1px solid #ddd;
+.linha-recibo {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
 }
 
-.recibo hr{
-    margin:20px 0;
+.recibo hr {
+  margin: 20px 0;
 }
 
-.recibo h3{
-    text-align:right;
-    color:#16a34a;
+.recibo h3 {
+  text-align: right;
+  color: #16a34a;
 }
 
-.recibo button{
-    margin-top:25px;
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:8px;
-    background:#2563eb;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
+.recibo button {
+  margin-top: 25px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.recibo button:hover{
-    background:#1d4ed8;
+.recibo button:hover {
+  background: #1d4ed8;
 }
 
-.cozinha{
-    margin-top:35px;
-    background:#fff7ed;
-    border:2px solid #fdba74;
-    border-radius:15px;
-    padding:30px;
-    box-shadow:0 6px 18px rgba(0,0,0,.08);
+.cozinha {
+  margin-top: 35px;
+  background: #fff7ed;
+  border: 2px solid #fdba74;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
-.cozinha h2{
-    color:#c2410c;
-    margin-bottom:15px;
+.cozinha h2 {
+  color: #c2410c;
+  margin-bottom: 15px;
 }
 
-.mensagem-cozinha{
-    margin:20px 0;
-    color:#7c2d12;
-    font-size:1.05rem;
+.mensagem-cozinha {
+  margin: 20px 0;
+  color: #7c2d12;
+  font-size: 1.05rem;
 }
 
-.produtos-cozinha{
-    margin-top:20px;
+.produtos-cozinha {
+  margin-top: 20px;
 }
 
-.produtos-cozinha h3{
-    color:#1e293b;
-    margin-bottom:15px;
+.produtos-cozinha h3 {
+  color: #1e293b;
+  margin-bottom: 15px;
 }
 
-.produto-cozinha{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:12px 15px;
-    margin-bottom:10px;
-    background:white;
-    border-radius:8px;
-    border-left:5px solid #f97316;
+.produto-cozinha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  background: white;
+  border-radius: 8px;
+  border-left: 5px solid #f97316;
 }
 
-.produto-cozinha strong{
-    color:#16a34a;
+.produto-cozinha strong {
+  color: #16a34a;
 }

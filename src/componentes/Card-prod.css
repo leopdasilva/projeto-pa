@@ -1,77 +1,80 @@
+/* ========================= */
+/* CARD DE PRODUTO */
+/* ========================= */
+
 .titulo-cardapio {
-    color: #1e293b;
-    font-size: 1.9rem;
-    font-weight: 700;
-    text-align: center;
-    margin: 20px 0 30px;
+  color: #1e293b;
+  font-size: 1.9rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 20px 0 30px;
 }
 
 .produtos-container {
-    width: 100%;
-    margin: 30px 0;
+  width: 100%;
+  margin: 30px 0;
 }
 
 .produtos-cards-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .produto-card {
-    background: #fff;
-    border-radius: 15px;
-    border: 1px solid #e2e8f0;
-    width: 280px;
-    padding: 18px;
-    box-sizing: border-box;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    box-shadow: 0 4px 12px rgba(0,0,0,.08);
-    transition: .3s;
+  background: #fff;
+  border-radius: 15px;
+  border: 1px solid #e2e8f0;
+  width: 280px;
+  padding: 18px;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
 }
 
 .produto-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0,0,0,.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 .produto-imagem {
-    width: 100%;
-    height: 170px;
-    object-fit: cover;
-    border-radius: 12px;
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 .produto-card h3 {
-    margin: 15px 0 8px;
-    color: #1e293b;
-    font-size: 1.4rem;
+  margin: 15px 0 8px;
+  color: #1e293b;
+  font-size: 1.4rem;
 }
 
 .categoria {
-    color: #f97316;
-    font-weight: bold;
-    margin-bottom: 8px;
+  color: #f97316;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .preco {
-    color: #16a34a;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
+  color: #16a34a;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .descricao {
-    color: #64748b;
-    font-size: .9rem;
-    line-height: 1.5;
-    min-height: 70px;
-    margin-bottom: 20px;
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  min-height: 70px;
+  margin-bottom: 20px;
 }
 
 /* ========================= */
@@ -79,75 +82,71 @@
 /* ========================= */
 
 .controle-quantidade {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
 .controle-quantidade button {
-    width: 38px;
-    height: 38px;
-    border: none;
-    border-radius: 50%;
-    background: #2563eb;
-    color: white;
-    font-size: 1.3rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: .2s;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: #2563eb;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 .controle-quantidade button:hover {
-    background: #1d4ed8;
-    transform: scale(1.08);
+  background: #1d4ed8;
+  transform: scale(1.08);
 }
 
 .controle-quantidade span {
-    width: 30px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #1e293b;
+  width: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1e293b;
 }
 
 /* ========================= */
-/* BOTÃO CARRINHO */
+/* BOTÃO DE CARRINHO */
 /* ========================= */
 
 .botao-carrinho {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 10px;
-
-    background: #16a34a;
-    color: white;
-
-    font-size: 1rem;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: .25s;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #16a34a;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s;
 }
 
 .botao-carrinho:hover {
-    background: #15803d;
+  background: #15803d;
 }
 
 .botao-carrinho:active {
-    transform: scale(.98);
+  transform: scale(0.98);
 }
 
 .botao-carrinho.adicionado {
-    background: #22c55e;
-    box-shadow: 0 10px 20px rgba(34, 197, 94, 0.22);
-    animation: pulseSuccess .4s ease;
+  background: #22c55e;
+  box-shadow: 0 10px 20px rgba(34, 197, 94, 0.22);
+  animation: pulseSuccess 0.4s ease;
 }
 
 @keyframes pulseSuccess {
-    0% { transform: scale(0.98); }
-    50% { transform: scale(1.02); }
-    100% { transform: scale(1); }
+  0% { transform: scale(0.98); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
 }

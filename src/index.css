@@ -1,3 +1,7 @@
+/* ========================= */
+/* RESET GLOBAL */
+/* ========================= */
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -44,28 +48,45 @@
   }
 }
 
-/* --- RESET GLOBAL PARA OCUPAR A TELA TODA --- */
+* {
+  box-sizing: border-box;
+}
+
+html,
 body {
   margin: 0;
   padding: 0;
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
 }
 
-/* Liberando o #root para esticar 100% */
+body {
+  font-family: var(--sans);
+  background: #f8f9fa;
+  color: #333;
+}
+
 #root {
   width: 100%;
   min-height: 100vh;
-  display: block; /* Remove o flex antigo do Vite */
+  display: block;
 }
 
-/* Estilos base de tipografia */
-h1, h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+img {
+  max-width: 100%;
+  display: block;
 }
 
+h1,
+h2,
+h3,
 p {
   margin: 0;
+}
+
+button,
+input,
+select {
+  font: inherit;
 }

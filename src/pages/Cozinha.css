@@ -1,481 +1,485 @@
+/* ========================= */
+/* COZINHA */
+/* ========================= */
+
 .cozinha-container {
-    min-height: 100vh;
-    padding: 40px 32px 60px;
-    background: linear-gradient(135deg, #0f172a 0%, #111827 35%, #1f2937 100%);
-    color: #e2e8f0;
+  min-height: 100vh;
+  padding: 40px 32px 60px;
+  background: linear-gradient(135deg, #0f172a 0%, #111827 35%, #1f2937 100%);
+  color: #e2e8f0;
 }
 
 .cabecalho-cozinha {
-    max-width: 1200px;
-    margin: 0 auto 28px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
 
 .resumo-status-cozinha {
-    max-width: 1200px;
-    margin: 0 auto 22px;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(120px, 1fr));
-    gap: 12px;
+  max-width: 1200px;
+  margin: 0 auto 22px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 12px;
 }
 
 .chip-status {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 16px;
-    border-radius: 14px;
-    background: rgba(15, 23, 42, 0.6);
-    border: 1px solid rgba(148, 163, 184, 0.18);
-    color: #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  color: #e2e8f0;
 }
 
 .chip-status strong {
-    color: #f8fafc;
-    font-size: 1.15rem;
+  color: #f8fafc;
+  font-size: 1.15rem;
 }
 
 .chip-label {
-    font-size: 0.74rem;
-    letter-spacing: 0.08rem;
-    text-transform: uppercase;
-    color: #cbd5e1;
+  font-size: 0.74rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  color: #cbd5e1;
 }
 
 .cabecalho-acoes {
-    display: flex;
-    align-items: center;
-    gap: 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
 .eyebrow {
-    margin: 0 0 10px;
-    color: #fbbf24;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.2rem;
-    text-transform: uppercase;
+  margin: 0 0 10px;
+  color: #fbbf24;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
 }
 
 .cabecalho-cozinha h1 {
-    margin: 0;
-    font-size: clamp(2rem, 3vw, 3rem);
-    color: #f8fafc;
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+  color: #f8fafc;
 }
 
 .status-resumo {
-    display: flex;
-    gap: 18px;
+  display: flex;
+  gap: 18px;
 }
 
 .resumo-item {
-    min-width: 120px;
-    padding: 18px 20px;
-    border-radius: 16px;
-    background: rgba(148, 163, 184, 0.12);
-    border: 1px solid rgba(148, 163, 184, 0.2);
-    text-align: center;
-    backdrop-filter: blur(8px);
+  min-width: 120px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: rgba(148, 163, 184, 0.12);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  text-align: center;
+  backdrop-filter: blur(8px);
 }
 
 .resumo-item span {
-    display: block;
-    font-size: 0.78rem;
-    letter-spacing: 0.08rem;
-    text-transform: uppercase;
-    color: #cbd5e1;
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  color: #cbd5e1;
 }
 
 .resumo-item strong {
-    display: block;
-    font-size: 2rem;
-    margin-top: 8px;
-    color: white;
+  display: block;
+  font-size: 2rem;
+  margin-top: 8px;
+  color: white;
 }
 
 .resumo-item.destaque {
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.28), rgba(14, 165, 233, 0.15));
-    border-color: rgba(96, 165, 250, 0.5);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.28), rgba(14, 165, 233, 0.15));
+  border-color: rgba(96, 165, 250, 0.5);
 }
 
 .btn-logout-cozinha {
-    border: none;
-    border-radius: 12px;
-    background: rgba(239, 68, 68, 0.14);
-    border: 1px solid rgba(248, 113, 113, 0.3);
-    color: #fecaca;
-    padding: 12px 18px;
-    font-weight: 700;
-    cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  background: rgba(239, 68, 68, 0.14);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  color: #fecaca;
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .toolbar-cozinha {
-    max-width: 1200px;
-    margin: 0 auto 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 18px;
+  max-width: 1200px;
+  margin: 0 auto 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
 }
 
 .notificacao-cozinha {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 18px;
-    border-radius: 999px;
-    background: rgba(15, 23, 42, 0.75);
-    border: 1px solid rgba(148, 163, 184, 0.18);
-    color: #dbeafe;
-    min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  color: #dbeafe;
+  min-height: 48px;
 }
 
 .icone-notificacao {
-    font-size: 1.2rem;
-    animation: pulseBell 1.4s ease-in-out infinite;
+  font-size: 1.2rem;
+  animation: pulseBell 1.4s ease-in-out infinite;
 }
 
 .notificacao-cozinha span.ativo {
-    color: #fbbf24;
-    font-weight: 700;
+  color: #fbbf24;
+  font-weight: 700;
 }
 
 .acoes-cozinha {
-    display: flex;
-    gap: 12px;
-    justify-content: flex-end;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
 }
 
 .btn-gerar-pedido,
 .btn-simulacao {
-    border: none;
-    border-radius: 12px;
-    padding: 14px 22px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: transform 0.2s ease;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 22px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 .btn-gerar-pedido {
-    background: linear-gradient(135deg, #f59e0b, #f97316);
-    color: white;
-    box-shadow: 0 12px 28px rgba(249, 115, 22, 0.35);
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  color: white;
+  box-shadow: 0 12px 28px rgba(249, 115, 22, 0.35);
 }
 
 .btn-simulacao {
-    background: rgba(34, 197, 94, 0.14);
-    border: 1px solid rgba(134, 239, 172, 0.35);
-    color: #bbf7d0;
+  background: rgba(34, 197, 94, 0.14);
+  border: 1px solid rgba(134, 239, 172, 0.35);
+  color: #bbf7d0;
 }
 
 .btn-simulacao.ligado {
-    background: rgba(22, 163, 74, 0.24);
-    border-color: rgba(74, 222, 128, 0.6);
+  background: rgba(22, 163, 74, 0.24);
+  border-color: rgba(74, 222, 128, 0.6);
 }
 
 .btn-gerar-pedido:hover,
 .btn-simulacao:hover,
 .btn-logout-cozinha:hover,
 .btn-acao:hover {
-    transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 .filtros-cozinha {
-    max-width: 1200px;
-    margin: 0 auto 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .filtro {
-    border: 1px solid rgba(148, 163, 184, 0.25);
-    background: rgba(15, 23, 42, 0.5);
-    color: #dbeafe;
-    border-radius: 999px;
-    padding: 9px 14px;
-    font-size: 0.82rem;
-    cursor: pointer;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: rgba(15, 23, 42, 0.5);
+  color: #dbeafe;
+  border-radius: 999px;
+  padding: 9px 14px;
+  font-size: 0.82rem;
+  cursor: pointer;
 }
 
 .filtro.ativo {
-    background: linear-gradient(135deg, #2563eb, #0ea5e9);
-    border-color: transparent;
-    color: white;
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  border-color: transparent;
+  color: white;
 }
 
 .lista-pedidos-cozinha {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
 }
 
 .pedido-cozinha {
-    background: rgba(15, 23, 42, 0.8);
-    color: #e2e8f0;
-    border: 1px solid rgba(148, 163, 184, 0.2);
-    border-radius: 22px;
-    padding: 24px;
-    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.35);
-    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  background: rgba(15, 23, 42, 0.8);
+  color: #e2e8f0;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.35);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .pedido-cozinha.prioridade-alta {
-    border-color: rgba(248, 113, 113, 0.46);
-    box-shadow: 0 18px 42px rgba(239, 68, 68, 0.14);
+  border-color: rgba(248, 113, 113, 0.46);
+  box-shadow: 0 18px 42px rgba(239, 68, 68, 0.14);
 }
 
 .pedido-cozinha.novo-pedido {
-    animation: novoPedido 0.8s ease;
+  animation: novoPedido 0.8s ease;
 }
 
 .pedido-cozinha:hover {
-    transform: translateY(-4px);
-    border-color: rgba(96, 165, 250, 0.45);
-    box-shadow: 0 26px 52px rgba(37, 99, 235, 0.16);
+  transform: translateY(-4px);
+  border-color: rgba(96, 165, 250, 0.45);
+  box-shadow: 0 26px 52px rgba(37, 99, 235, 0.16);
 }
 
 .pedido-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 14px;
-    margin-bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
 }
 
 .header-badges {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .pedido-label {
-    margin: 0 0 6px;
-    color: #93c5fd;
-    font-size: 0.75rem;
-    letter-spacing: 0.12rem;
-    text-transform: uppercase;
+  margin: 0 0 6px;
+  color: #93c5fd;
+  font-size: 0.75rem;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
 }
 
 .pedido-cozinha h2 {
-    margin: 0;
-    font-size: 2rem;
+  margin: 0;
+  font-size: 2rem;
 }
 
 .badge-prioridade,
 .badge-status {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 12px;
-    border-radius: 999px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .badge-prioridade.alta {
-    background: rgba(239, 68, 68, 0.18);
-    color: #fecaca;
+  background: rgba(239, 68, 68, 0.18);
+  color: #fecaca;
 }
 
 .badge-status {
-    background: rgba(148, 163, 184, 0.18);
-    color: #e2e8f0;
+  background: rgba(148, 163, 184, 0.18);
+  color: #e2e8f0;
 }
 
 .status-pedido-recebido {
-    background: rgba(245, 158, 11, 0.15);
-    color: #fbbf24;
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
 }
 
 .status-em-preparo {
-    background: rgba(59, 130, 246, 0.15);
-    color: #93c5fd;
+  background: rgba(59, 130, 246, 0.15);
+  color: #93c5fd;
 }
 
 .status-pronto-para-entrega {
-    background: rgba(34, 197, 94, 0.18);
-    color: #86efac;
+  background: rgba(34, 197, 94, 0.18);
+  color: #86efac;
 }
 
 .status-entregue {
-    background: rgba(148, 163, 184, 0.22);
-    color: #cbd5e1;
+  background: rgba(148, 163, 184, 0.22);
+  color: #cbd5e1;
 }
 
 .pedido-meta {
-    display: flex;
-    justify-content: space-between;
-    gap: 8px;
-    padding: 10px 0 14px;
-    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
-    color: #cbd5e1;
-    font-size: 0.95rem;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 0 14px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  flex-wrap: wrap;
 }
 
 .tempo-pedido {
-    color: #fbbf24;
-    font-weight: 700;
+  color: #fbbf24;
+  font-weight: 700;
 }
 
 .itens-cozinha {
-    margin-top: 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .item-cozinha {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    padding: 10px 12px;
-    border-radius: 12px;
-    background: rgba(30, 41, 59, 0.8);
-    border: 1px solid rgba(148, 163, 184, 0.12);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.12);
 }
 
 .item-cozinha span {
-    color: #f8fafc;
+  color: #f8fafc;
 }
 
 .item-cozinha strong {
-    color: #fbbf24;
+  color: #fbbf24;
 }
 
 .pedido-footer {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .total-cozinha {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-    color: #f8fafc;
-    font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  color: #f8fafc;
+  font-size: 1.1rem;
 }
 
 .total-cozinha strong {
-    color: #facc15;
-    font-size: 1.3rem;
+  color: #facc15;
+  font-size: 1.3rem;
 }
 
 .barra-status {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
 }
 
 .barra-status span {
-    height: 8px;
-    border-radius: 999px;
-    background: rgba(148, 163, 184, 0.18);
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.18);
 }
 
 .barra-status span.ativo {
-    background: linear-gradient(90deg, #f59e0b, #22c55e);
+  background: linear-gradient(90deg, #f59e0b, #22c55e);
 }
 
 .acoes-pedido {
-    margin-top: 18px;
+  margin-top: 18px;
 }
 
 .btn-acao {
-    width: 100%;
-    border: none;
-    border-radius: 12px;
-    padding: 13px 18px;
-    font-size: 0.98rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 13px 18px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .btn-primario {
-    background: linear-gradient(135deg, #2563eb, #0ea5e9);
-    color: white;
-    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.3);
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  color: white;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.3);
 }
 
 .btn-limpar {
-    background: rgba(239, 68, 68, 0.16);
-    border: 1px solid rgba(248, 113, 113, 0.3);
-    color: #fecaca;
+  background: rgba(239, 68, 68, 0.16);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  color: #fecaca;
 }
 
 .cozinha-vazio {
-    max-width: 700px;
-    margin: 80px auto 0;
-    background: rgba(15, 23, 42, 0.7);
-    border: 1px solid rgba(148, 163, 184, 0.2);
-    border-radius: 24px;
-    padding: 42px 30px;
-    text-align: center;
-    color: #e2e8f0;
+  max-width: 700px;
+  margin: 80px auto 0;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 24px;
+  padding: 42px 30px;
+  text-align: center;
+  color: #e2e8f0;
 }
 
 .cozinha-vazio h2 {
-    margin: 0 0 10px;
-    font-size: 2rem;
+  margin: 0 0 10px;
+  font-size: 2rem;
 }
 
 .cozinha-vazio p {
-    margin: 0;
-    color: #cbd5e1;
+  margin: 0;
+  color: #cbd5e1;
 }
 
 @keyframes pulseBell {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.18); }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
 }
 
 @keyframes novoPedido {
-    0% { transform: scale(0.96); opacity: 0.3; }
-    50% { transform: scale(1.02); opacity: 1; }
-    100% { transform: scale(1); opacity: 1; }
+  0% { transform: scale(0.96); opacity: 0.3; }
+  50% { transform: scale(1.02); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 @media (max-width: 700px) {
-    .cozinha-container {
-        padding: 28px 18px 40px;
-    }
+  .cozinha-container {
+    padding: 28px 18px 40px;
+  }
 
-    .cabecalho-cozinha,
-    .toolbar-cozinha {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .cabecalho-cozinha,
+  .toolbar-cozinha {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .cabecalho-acoes,
-    .status-resumo,
-    .acoes-cozinha {
-        width: 100%;
-        justify-content: space-between;
-    }
+  .cabecalho-acoes,
+  .status-resumo,
+  .acoes-cozinha {
+    width: 100%;
+    justify-content: space-between;
+  }
 
-    .resumo-item {
-        flex: 1;
-    }
+  .resumo-item {
+    flex: 1;
+  }
 
-    .resumo-status-cozinha {
-        grid-template-columns: repeat(2, minmax(120px, 1fr));
-    }
+  .resumo-status-cozinha {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
 
-    .btn-gerar-pedido,
-    .btn-simulacao,
-    .btn-logout-cozinha {
-        width: 100%;
-    }
+  .btn-gerar-pedido,
+  .btn-simulacao,
+  .btn-logout-cozinha {
+    width: 100%;
+  }
 }
