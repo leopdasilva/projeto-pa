@@ -314,6 +314,32 @@ function Pedido({ pedido, limparCarrinho, voltar }) {
 
                     }
 
+                    <div className="linha-recibo">
+                        <span>Subtotal</span>
+                        <span>
+                            R$ {(pedido.subtotal ?? pedido.total).toFixed(2).replace(".",",")}
+                        </span>
+                    </div>
+
+                    <div className="linha-recibo">
+                        <span>Entrega</span>
+                        <span>
+                            R$ {(pedido.taxaEntrega ?? 0).toFixed(2).replace(".",",")}
+                        </span>
+                    </div>
+
+                    <div className="linha-recibo">
+                        <span>Local</span>
+                        <span>
+                            {pedido.endereco || "Rua da Entrega"}, {pedido.numeroEndereco || "S/N"}
+                        </span>
+                    </div>
+
+                    <div className="linha-recibo">
+                        <span>Pagamento</span>
+                        <span>{pedido.formaPagamento || "Dinheiro"}</span>
+                    </div>
+
                     <hr />
 
 

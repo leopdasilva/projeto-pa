@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Carrinho from "./pages/Carrinho";
 import Pedido from "./pages/Pedido";
+import Toast from "./componentes/Toast";
 
 function App() {
 
@@ -103,6 +104,7 @@ function App() {
   const [quantidadeCarrinho, setQuantidadeCarrinho] = useState(0);
   const [carrinho, setCarrinho] = useState([]);
   const [pedidos,setPedidos] = useState([]);
+  const [toastMensagem, setToastMensagem] = useState("");
 
   function adicionarCarrinho(nome, preco, categoria, imagem, quantidade) {
 
@@ -138,7 +140,7 @@ function App() {
 
     });
 
-    alert(`${quantidade}x ${nome} adicionado ao carrinho`);
+    setToastMensagem(`${quantidade}x ${nome} adicionado ao carrinho`);
 
   }
 
@@ -147,7 +149,16 @@ function App() {
     setQuantidadeCarrinho(0);
   }
 
-  function finalizarCompra(){
+  function finalizarCompra(dadosEntrega = {}) {
+
+    if (carrinho.length === 0) {
+      setToastMensagem("Seu carrinho está vazio.");
+      return;
+    }
+
+    const subtotalPedido = totalCarrinho;
+    const taxaEntrega = subtotalPedido > 0 ? 6.5 : 0;
+    const totalPedido = subtotalPedido + taxaEntrega;
 
     const novoPedido = {
 
@@ -156,7 +167,17 @@ function App() {
 
         produtos: carrinho,
 
-        total: totalCarrinho,
+        subtotal: subtotalPedido,
+
+        taxaEntrega,
+
+        total: totalPedido,
+
+        endereco: dadosEntrega.endereco || "Rua da Entrega",
+
+        numeroEndereco: dadosEntrega.numeroEndereco || "S/N",
+
+        formaPagamento: dadosEntrega.formaPagamento || "Dinheiro",
 
         status:"Pedido Recebido"
 
@@ -168,7 +189,7 @@ function App() {
         novoPedido
     ]);
 
-
+    setToastMensagem("Pedido confirmado! Acompanhe o status agora.");
     navigate("/pedido");
 
   }
@@ -226,6 +247,12 @@ function App() {
   );
 
   return (
+    <>
+      <Toast
+        message={toastMensagem}
+        visible={Boolean(toastMensagem)}
+        onClose={() => setToastMensagem("")}
+      />
 
     <Routes>
 
@@ -299,6 +326,7 @@ function App() {
 
 
 </Routes>
+    </>
 
 );
 }

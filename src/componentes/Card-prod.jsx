@@ -1,84 +1,76 @@
-import { useState } from 'react'
-import './Card-prod.css'
+import { useState } from "react";
+import "./Card-prod.css";
 
 function CardProduto(props) {
+    const [quantidade, setQuantidade] = useState(1);
+    const [adicionado, setAdicionado] = useState(false);
 
-    const [quantidade, setQuantidade] = useState(1)
-
-    function aumentarQuantidade(){
-        setQuantidade(quantidade + 1)
+    function aumentarQuantidade() {
+        setQuantidade(prev => prev + 1);
     }
 
-    function diminuirQuantidade(){
-        if(quantidade > 1){
-            setQuantidade(quantidade - 1)
+    function diminuirQuantidade() {
+        if (quantidade > 1) {
+            setQuantidade(prev => prev - 1);
         }
     }
 
-    function adicionarCarrinho(){
-
+    function adicionarCarrinho() {
         props.adicionarCarrinho(
             props.nome,
             props.preco,
             props.categoria,
             props.imagem,
             quantidade
-        )
-    
-        setQuantidade(1)
-    
+        );
+
+        setAdicionado(true);
+        setQuantidade(1);
+
+        window.setTimeout(() => {
+            setAdicionado(false);
+        }, 1200);
     }
 
     return (
-        <div className='produto-card'>
-
+        <div className="produto-card">
             <img
                 src={props.imagem}
                 alt={props.nome}
                 className="produto-imagem"
             />
 
-            <h3>
-                {props.nome}
-            </h3>
+            <h3>{props.nome}</h3>
 
-            <p className="categoria">
-                Categoria: {props.categoria}
-            </p>
+            <p className="categoria">Categoria: {props.categoria}</p>
 
             <p className="preco">
-                R$ {props.preco.toFixed(2).replace('.', ',')}
+                R$ {props.preco.toFixed(2).replace(".", ",")}
             </p>
 
-            <p className='descricao'>
-                {props.descricao}
-            </p>
+            <p className="descricao">{props.descricao}</p>
 
             <div className="controle-quantidade">
-
-                <button onClick={diminuirQuantidade}>
+                <button type="button" onClick={diminuirQuantidade}>
                     -
                 </button>
 
-                <span>
-                    {quantidade}
-                </span>
+                <span>{quantidade}</span>
 
-                <button onClick={aumentarQuantidade}>
+                <button type="button" onClick={aumentarQuantidade}>
                     +
                 </button>
-
             </div>
 
-            <button 
-                className="botao-carrinho"
+            <button
+                type="button"
+                className={adicionado ? "botao-carrinho adicionado" : "botao-carrinho"}
                 onClick={adicionarCarrinho}
             >
-                Adicionar ao Carrinho
+                {adicionado ? "✓ Adicionado" : "Adicionar ao Carrinho"}
             </button>
-
         </div>
-    )
+    );
 }
 
-export default CardProduto
+export default CardProduto;

@@ -1,252 +1,167 @@
-/* ============================= */
-/* LAYOUT PRINCIPAL HOME */
-/* ============================= */
-
 .conteudo-principal {
-
     display:flex;
-
     flex-direction:row;
-
     width:100%;
-
     min-height:calc(100vh - 100px);
-
-    padding:30px 40px;
-
+    padding:0 40px 30px 40px;
     gap:40px;
-
-    background:#f8fafc;
-
+    box-sizing: border-box;
 }
 
-
-/* ============================= */
-/* COLUNA DO CARDÁPIO */
-/* ============================= */
-
-.coluna-esquerda {
-
-    flex:1;
-
-    background:white;
-
-    border-radius:18px;
-
-    padding:40px;
-
-    border:1px solid #e2e8f0;
-
-    box-shadow:
-    0 8px 20px rgba(0,0,0,.08);
-
+.produtos-container {
+    width: 100%;
 }
 
-
-/* ============================= */
-/* CARDÁPIO */
-/* ============================= */
-
-.produtos-container{
-
-    width:100%;
-
+.titulo-cardapio {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #1e293b;
+    margin-bottom: 35px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #e63946;
 }
 
-
-.titulo-cardapio{
-
-    text-align:center;
-
-    font-size:2.2rem;
-
-    color:#1e293b;
-
-    margin-bottom:35px;
-
-    padding-bottom:12px;
-
-    border-bottom:3px solid #e63946;
-
+.toolbar-cardapio {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 28px;
 }
 
-
-
-.produtos-cards-wrapper{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:30px;
-
+.campo-busca {
+    width: 100%;
+    border: 1px solid #dbeafe;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 1rem;
+    background: #fff;
+    color: #1e293b;
+    box-sizing: border-box;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.06);
 }
 
-
-/* ============================= */
-/* COLUNA FUNCIONÁRIOS */
-/* ============================= */
-
-
-.coluna-direita{
-
-    width:330px;
-
-    display:flex;
-
-    flex-direction:column;
-
+.campo-busca:focus {
+    outline: 2px solid rgba(37, 99, 235, 0.2);
+    border-color: #60a5fa;
 }
 
-
-/* ============================= */
-/* FUNCIONÁRIOS */
-/* ============================= */
-
-
-.funcionarios-container{
-
-    background:#1d2030;
-
-    color:white;
-
-    padding:25px;
-
-    border-radius:18px;
-
-    box-shadow:
-    0 8px 20px rgba(0,0,0,.15);
-
+.filtros-cardapio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
 
-
-
-.titulo-funcionarios{
-
-    color:white;
-
-    text-align:center;
-
-    font-size:1.7rem;
-
-    margin-bottom:25px;
-
-    padding-bottom:10px;
-
-    border-bottom:2px solid white;
-
+.filtro {
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    color: #334155;
+    border-radius: 999px;
+    padding: 9px 14px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-
-
-.funcionarios-cards-wrapper{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    gap:25px;
-
+.filtro.ativo {
+    background: linear-gradient(135deg, #2563eb, #0ea5e9);
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 10px 22px rgba(37, 99, 235, 0.22);
 }
 
-
-/* ============================= */
-/* ANIMAÇÕES */
-/* ============================= */
-
-
-.coluna-esquerda,
-.funcionarios-container{
-
-    animation:aparecer .5s ease;
-
+.produtos-cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
 }
 
+.sem-produtos {
+    width: 100%;
+    text-align: center;
+    padding: 38px 20px;
+    background: rgba(255,255,255,0.6);
+    border: 1px dashed #cbd5e1;
+    border-radius: 16px;
+    color: #475569;
+    font-weight: 600;
+}
 
+.funcionarios-container {
+    background: #1d2030;
+    color: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+}
 
-@keyframes aparecer{
+.titulo-funcionarios {
+    color: white;
+    text-align: center;
+    font-size: 1.7rem;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid white;
+}
 
-    from{
+.funcionarios-cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
 
-        opacity:0;
+.funcionarios-container {
+    animation: aparecer .5s ease;
+}
 
-        transform:translateY(15px);
+.produtos-container {
+    animation: aparecer .5s ease;
+}
 
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
     }
 
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 
 }
 
+@media (max-width: 1024px) {
 
-
-/* ============================= */
-/* RESPONSIVIDADE */
-/* ============================= */
-
-
-@media(max-width:1024px){
-
-
-    .conteudo-principal{
-
-        flex-direction:column;
-
-        padding:20px;
-
+    .conteudo-principal {
+        flex-direction: column;
+        padding: 0 20px 30px 20px;
     }
 
-
-
-    .coluna-direita{
-
-        width:100%;
-
+    .funcionarios-cards-wrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-
-
-
-    .funcionarios-cards-wrapper{
-
-        flex-direction:row;
-
-        flex-wrap:wrap;
-
-        justify-content:center;
-
-    }
-
 
 }
 
+@media (max-width: 600px) {
 
-@media(max-width:600px){
-
-    .conteudo-principal{
-        padding:15px;
+    .titulo-cardapio {
+        font-size: 1.8rem;
     }
 
-    .coluna-esquerda{
-        padding:20px;
+    .produtos-cards-wrapper {
+        gap: 20px;
     }
 
-    .titulo-cardapio{
-        font-size:1.8rem;
-    }
-
-    .produtos-cards-wrapper{
-        gap:20px;
+    .toolbar-cardapio {
+        gap: 12px;
     }
 
 }

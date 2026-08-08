@@ -20,6 +20,7 @@
     justify-content:space-between;
     align-items:flex-start;
     margin-bottom:50px;
+    gap: 12px;
 }
 
 .etapa{
@@ -29,7 +30,6 @@
     color:#94a3b8;
 }
 
-/* Linha entre as etapas */
 .etapa:not(:first-child)::before{
     content:"";
     position:absolute;
@@ -41,7 +41,6 @@
     z-index:0;
 }
 
-/* Linha verde quando a etapa já foi alcançada */
 .etapa.ativa:not(:first-child)::before{
     background:#16a34a;
 }
@@ -64,7 +63,8 @@
 }
 
 .etapa.ativa .circulo{
-    background:#16a34a;
+    background:linear-gradient(135deg, #16a34a, #22c55e);
+    box-shadow:0 8px 18px rgba(34,197,94,.24);
 }
 
 .etapa p{
@@ -74,7 +74,8 @@
 }
 
 .status-pedido{
-    background:#f8fafc;
+    background:linear-gradient(135deg, #f8fafc, #eff6ff);
+    border:1px solid #dbeafe;
     border-radius:12px;
     padding:25px;
     text-align:center;
