@@ -306,13 +306,15 @@ function Home() {
       subtotal: subtotalPedido,
       taxaEntrega,
       total: totalPedido,
-      endereco:
-        dadosEntrega.endereco || "Rua da Entrega",
-      numeroEndereco:
-        dadosEntrega.numeroEndereco || "S/N",
-      formaPagamento:
-        dadosEntrega.formaPagamento || "Dinheiro",
+    
+      endereco: dadosEntrega.endereco || "Rua da Entrega",
+      numeroEndereco: dadosEntrega.numeroEndereco || "S/N",
+      formaPagamento: dadosEntrega.formaPagamento || "Dinheiro",
+    
       status: "Pedido Recebido",
+    
+      criadoEm: Date.now(),
+      prioridade: "Normal",
     };
 
     setPedidos((prev) => [...prev, novoPedido]);
@@ -342,6 +344,13 @@ function Home() {
       )
     );
   }
+  
+  function adicionarPedido(pedido) {
+    setPedidos((prev) => [
+        ...prev,
+        pedido
+    ]);
+}
 
   const dadosApp = {
     produtos,
