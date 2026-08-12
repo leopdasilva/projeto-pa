@@ -1,22 +1,24 @@
-import { Outlet, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 import Header from "./Header";
 import "./Layout.css";
 
-function Layout({ quantidadeCarrinho }) {
-    const navigate = useNavigate();
+function Layout({ quantidadeCarrinho, children }) {
+  const navigate = useNavigate();
 
-    return (
-        <>
-            <Header
-                quantidade={quantidadeCarrinho}
-                mostrarCardapio={() => navigate("/home")}
-                mostrarCarrinho={() => navigate("/carrinho")}
-            />
-            <div className="page-shell">
-                <Outlet />
-            </div>
-        </>
-    );
+  return (
+    <>
+      <Header
+        quantidade={quantidadeCarrinho}
+        mostrarCardapio={() => navigate("/home")}
+        mostrarCarrinho={() => navigate("/carrinho")}
+      />
+
+      <div className="page-shell">
+        {children}
+      </div>
+    </>
+  );
 }
 
 export default Layout;
