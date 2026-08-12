@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import {
   Outlet,
@@ -131,11 +131,35 @@ function Home() {
 
   const [busca, setBusca] = useState("");
 
-  const [carrinho, setCarrinho] = useState([]);
+  const [carrinho, setCarrinho] = useState(() => {
+    try {
+      const carrinhoSalvo = localStorage.getItem("xpresso_carrinho");
+      return carrinhoSalvo ? JSON.parse(carrinhoSalvo) : [];
+    } catch (error) {
+      console.error("Erro ao carregar carrinho:", error);
+      return [];
+    }
+  });
 
-  const [pedidos, setPedidos] = useState([]);
+  const [pedidos, setPedidos] = useState(() => {
+    try {
+      const pedidosSalvos = localStorage.getItem("xpresso_pedidos");
+      return pedidosSalvos ? JSON.parse(pedidosSalvos) : [];
+    } catch (error) {
+      console.error("Erro ao carregar pedidos:", error);
+      return [];
+    }
+  });
 
   const [toastMensagem, setToastMensagem] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem("xpresso_carrinho", JSON.stringify(carrinho));
+  }, [carrinho]);
+
+  useEffect(() => {
+    localStorage.setItem("xpresso_pedidos", JSON.stringify(pedidos));
+  }, [pedidos]);
 
   // =========================
   // CATEGORIAS
