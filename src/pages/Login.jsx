@@ -49,7 +49,15 @@ function Login() {
 
         <button onClick={entrar}>Entrar</button>
 
-        <a href="#">Esqueceu a senha?</a>
+        <a
+          href="#"
+          onClick={(event) => {
+            event.preventDefault();
+            alert("😂 Calma! Os logins e as senhas estão escritos aí embaixo na página. É só olhar!");
+          }}
+        >
+          Esqueceu a senha?
+        </a>
 
         <div className="usuarios-teste">
           <p>Cliente: cliente / 123</p>
