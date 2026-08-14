@@ -330,8 +330,17 @@ function Carrinho() {
               </button>
 
               <button
-                className="btn-confirmar"
+              className="btn-confirmar"
                 onClick={() => {
+                  if (
+                    !dadosEntrega.endereco.trim() ||
+                    !dadosEntrega.numeroEndereco.trim() ||
+                    !dadosEntrega.formaPagamento.trim()
+                  ) {
+                    alert("Preencha o endereço, o número da casa e a forma de pagamento.");
+                    return;
+                  }
+
                   setConfirmarPedido(false);
                   finalizarCompra(dadosEntrega);
                 }}
