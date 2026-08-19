@@ -3,9 +3,15 @@ import "./Header.css";
 
 function Header({ quantidade }) {
     const navigate = useNavigate();
-    function logout(){
+
+    const usuario = localStorage.getItem("xpresso_usuario");
+
+    console.log("USUÁRIO:", usuario);
+
+    function logout() {
+        localStorage.removeItem("xpresso_usuario");
         navigate("/");
-    }
+      }
 
     return (
         <header className="titulo">
@@ -21,6 +27,10 @@ function Header({ quantidade }) {
             </div>
 
             <nav className="menu-header">
+                <p className="saudacao">
+                    Olá, <span className="nome-usuario">{usuario || "usuário"}</span>!
+                </p>
+
                 <button
                     className="btn-header"
                     onClick={() => navigate("/home")}
@@ -43,7 +53,7 @@ function Header({ quantidade }) {
                 </button>
             </nav>
         </header>
-    )
+    );
 }
 
 export default Header;

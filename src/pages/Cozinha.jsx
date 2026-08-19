@@ -95,9 +95,12 @@ function gerarPedidoAleatorio() {
 function Cozinha() {
   const navigate = useNavigate();
 
+  const usuario = localStorage.getItem("xpresso_usuario");
+
   const {
     pedidos,
     atualizarStatusPedido,
+    removerPedido,
     setToastMensagem,
   } = useOutletContext();
 
@@ -123,7 +126,10 @@ function Cozinha() {
    * com os pedidos criados pelo simulador.
    */
   const listaPedidos = useMemo(
-    () => [...pedidos, ...pedidosSimulados],
+    () =>
+      [...pedidos, ...pedidosSimulados].filter(
+        (pedido) => pedido.status !== "Entregue"
+      ),
     [pedidos, pedidosSimulados]
   );
 
@@ -479,28 +485,19 @@ function Cozinha() {
    * Pedidos reais permanecem no Home
    * para manter o histórico.
    */
-  const removerPedidoEntregue = (
-    pedido
-  ) => {
+  const removerPedidoEntregue = (pedido) => {
     if (pedido.simulado) {
-      setPedidosSimulados(
-        (prev) =>
-          prev.filter(
-            (item) =>
-              item.numero !==
-              pedido.numero
-          )
+      setPedidosSimulados((prev) =>
+        prev.filter(
+          (item) => item.numero !== pedido.numero
+        )
       );
-
-      setToastMensagem(
-        `Pedido #${pedido.numero} removido da fila simulada.`
-      );
-
-      return;
+    } else {
+      removerPedido(pedido.numero);
     }
-
+  
     setToastMensagem(
-      `O pedido #${pedido.numero} permanece no histórico.`
+      `Pedido #${pedido.numero} removido da fila.`
     );
   };
 
@@ -508,6 +505,7 @@ function Cozinha() {
    * Logout.
    */
   const logout = () => {
+    localStorage.removeItem("xpresso_usuario");
     navigate("/");
   };
 
@@ -547,7 +545,7 @@ function Cozinha() {
       <header className="cabecalho-cozinha">
         <div>
           <p className="eyebrow">
-            Área operacional
+            Olá, {usuario === "chef" ? "chef" : "usuário"}!
           </p>
 
           <h1>

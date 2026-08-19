@@ -154,16 +154,19 @@
     background:#cbd5e1;
 }
 
-.btn-limpar{
-    background:#ef4444;
-    color:#fff;
-}
-
-.btn-limpar:hover{
-    background:#dc2626;
-    transform:translateY(-2px);
-    box-shadow:0 6px 16px rgba(239,68,68,.35);
-}
+.btn-limpar {
+    background: #b91c1c !important;
+    color: #ffffff !important;
+    border: 2px solid #7f1d1d !important;
+    font-weight: 800 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+  }
+  
+  .btn-limpar:hover {
+    background: #991b1b !important;
+    color: #ffffff !important;
+  }
 
 .btn-finalizar{
     background:#2563eb;

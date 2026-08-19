@@ -5,17 +5,19 @@ import "./Login.css";
 function Login() {
   const navigate = useNavigate();
 
-  // Campos do formulário de acesso do cliente ou da cozinha.
+  // Campos do formulário de acesso do cliente ou do chef.
   const [usuario, setUsuario] = useState("");
   const [senha, setSenha] = useState("");
 
   function entrar() {
     if (usuario === "cliente" && senha === "123") {
+      localStorage.setItem("xpresso_usuario", "cliente");
       navigate("/home");
       return;
     }
 
-    if (usuario === "cozinha" && senha === "123") {
+    if (usuario === "chef" && senha === "123") {
+      localStorage.setItem("xpresso_usuario", "chef");
       navigate("/cozinha");
       return;
     }
@@ -53,7 +55,9 @@ function Login() {
           href="#"
           onClick={(event) => {
             event.preventDefault();
-            alert("😂 Calma! Os logins e as senhas estão escritos aí embaixo na página. É só olhar!");
+            alert(
+              "😂 Calma! Os logins e as senhas estão escritos aí embaixo na página. É só olhar!"
+            );
           }}
         >
           Esqueceu a senha?
@@ -61,7 +65,7 @@ function Login() {
 
         <div className="usuarios-teste">
           <p>Cliente: cliente / 123</p>
-          <p>Cozinha: cozinha / 123</p>
+          <p>Chef: chef / 123</p>
         </div>
       </div>
     </div>

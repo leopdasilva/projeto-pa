@@ -153,6 +153,14 @@ function Home() {
 
   const [toastMensagem, setToastMensagem] = useState("");
 
+  function removerPedido(numeroPedido) {
+  setPedidos((prev) =>
+    prev.filter(
+      (pedido) => pedido.numero !== numeroPedido
+    )
+  );
+}
+
   useEffect(() => {
     localStorage.setItem("xpresso_carrinho", JSON.stringify(carrinho));
   }, [carrinho]);
@@ -261,6 +269,14 @@ function Home() {
   function removerItem(nome) {
     setCarrinho((prev) =>
       prev.filter((item) => item.nome !== nome)
+    );
+  }
+
+  function removerPedido(numeroPedido) {
+    setPedidos((prev) =>
+      prev.filter(
+        (pedido) => pedido.numero !== numeroPedido
+      )
     );
   }
 
@@ -394,6 +410,7 @@ function Home() {
     finalizarCompra,
 
     atualizarStatusPedido,
+    removerPedido,
 
     setToastMensagem,
   };
