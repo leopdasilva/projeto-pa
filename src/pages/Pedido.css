@@ -144,20 +144,64 @@
   color: #16a34a;
 }
 
-.recibo button {
+.acoes-recibo {
+  display: flex;
+  gap: 12px;
   margin-top: 25px;
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  background: #2563eb;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
 }
 
-.recibo button:hover {
+.btn-baixar-recibo,
+.btn-voltar-cardapio {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+/* ========================= */
+/* BOTÃO BAIXAR RECIBO */
+/* ========================= */
+
+.btn-baixar-recibo {
+  background: #2563eb;
+}
+
+.btn-baixar-recibo:hover {
   background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* ========================= */
+/* BOTÃO VOLTAR */
+/* ========================= */
+
+.btn-voltar-cardapio {
+  background: #475569;
+}
+
+.btn-voltar-cardapio:hover {
+  background: #334155;
+  transform: translateY(-2px);
+}
+
+/* ========================= */
+/* CELULAR */
+/* ========================= */
+
+@media (max-width: 600px) {
+  .acoes-recibo {
+    flex-direction: column;
+  }
+
+  .btn-baixar-recibo,
+  .btn-voltar-cardapio {
+    width: 100%;
+  }
 }
 
 .cozinha {

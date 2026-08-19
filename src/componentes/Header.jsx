@@ -11,7 +11,7 @@ function Header({ quantidade }) {
     function logout() {
         localStorage.removeItem("xpresso_usuario");
         navigate("/");
-      }
+    }
 
     return (
         <header className="titulo">

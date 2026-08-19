@@ -13,6 +13,86 @@ function Pedido() {
   // Pega o pedido mais recente
   const pedido = pedidos[pedidos.length - 1];
 
+  function baixarRecibo() {
+    const linhas = [];
+  
+    linhas.push("================================");
+    linhas.push("       XPRESS FOOD");
+    linhas.push("           RECIBO");
+    linhas.push("================================");
+    linhas.push("");
+    linhas.push(`Pedido Nº: #${pedido.numero}`);
+    linhas.push("");
+  
+    linhas.push("ITENS DO PEDIDO");
+    linhas.push("--------------------------------");
+  
+    pedido.produtos.forEach((item) => {
+      const valor = (item.preco * item.quantidade)
+        .toFixed(2)
+        .replace(".", ",");
+  
+      linhas.push(
+        `${item.quantidade}x ${item.nome} - R$ ${valor}`
+      );
+    });
+  
+    linhas.push("");
+    linhas.push("--------------------------------");
+  
+    const subtotal = (pedido.subtotal ?? pedido.total)
+      .toFixed(2)
+      .replace(".", ",");
+  
+    const entrega = (pedido.taxaEntrega ?? 0)
+      .toFixed(2)
+      .replace(".", ",");
+  
+    const total = pedido.total
+      .toFixed(2)
+      .replace(".", ",");
+  
+    linhas.push(`Subtotal: R$ ${subtotal}`);
+    linhas.push(`Entrega: R$ ${entrega}`);
+    linhas.push("");
+  
+    linhas.push(
+      `Endereço: ${pedido.endereco || "Rua da Entrega"}, ${
+        pedido.numeroEndereco || "S/N"
+      }`
+    );
+  
+    linhas.push(
+      `Pagamento: ${pedido.formaPagamento || "Dinheiro"}`
+    );
+  
+    linhas.push("");
+    linhas.push("================================");
+    linhas.push(`TOTAL: R$ ${total}`);
+    linhas.push("================================");
+    linhas.push("");
+    linhas.push("Obrigado por pedir na XPRESS FOOD!");
+    linhas.push("❖ Pediu? Chegou!");
+  
+    const conteudo = linhas.join("\n");
+  
+    const arquivo = new Blob([conteudo], {
+      type: "text/plain;charset=utf-8",
+    });
+  
+    const url = URL.createObjectURL(arquivo);
+  
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `recibo-pedido-${pedido.numero}.txt`;
+  
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  
+    URL.revokeObjectURL(url);
+  }
+
   const etapas = [
     "Pedido Recebido",
     "Em Preparação",
@@ -188,14 +268,24 @@ function Pedido() {
               .replace(".", ",")}
           </h3>
 
-          <button
-            onClick={() => {
-              limparCarrinho();
-              navigate("/home");
-            }}
-          >
-            Voltar ao Cardápio
-          </button>
+          <div className="acoes-recibo">
+            <button
+              className="btn-baixar-recibo"
+              onClick={baixarRecibo}
+            >
+              📄 Baixar Recibo
+            </button>
+
+            <button
+              className="btn-voltar-cardapio"
+              onClick={() => {
+                limparCarrinho();
+                navigate("/home");
+              }}
+            >
+              🍔 Voltar ao Cardápio
+            </button>
+          </div>
         </div>
       )}
     </div>
